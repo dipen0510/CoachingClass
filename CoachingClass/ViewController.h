@@ -10,6 +10,14 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *studentNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *rollNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
+@property (weak, nonatomic) IBOutlet UITextField *pinCodeTextField;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+
+- (IBAction)submitButtonTapped:(id)sender;
+- (IBAction)addMoreStudentButtonTapped:(id)sender;
 
 @end
 
