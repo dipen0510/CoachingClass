@@ -70,6 +70,9 @@
 
 
 - (IBAction)submitButtonTapped:(id)sender {
+    
+    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+    
 }
 
 - (IBAction)addMoreStudentButtonTapped:(id)sender {
