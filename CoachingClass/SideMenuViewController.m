@@ -96,7 +96,27 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
-    
+    switch (indexPath.row) {
+        case 0:
+            [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+            break;
+            
+        case 1:
+            [self performSegueWithIdentifier:@"showAttendanceSegue" sender:nil];
+            break;
+            
+        case 2:
+            [self performSegueWithIdentifier:@"showCommentsSegue" sender:nil];
+            break;
+            
+        case 3:
+            [self performSegueWithIdentifier:@"showContactUsSegue" sender:nil];
+            break;
+            
+            
+        default:
+            break;
+    }
     
 }
 

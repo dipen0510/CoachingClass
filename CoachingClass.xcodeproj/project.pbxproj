@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104711C5A9CA800E8D970 /* AttendanceViewController.m */; };
+		189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */; };
+		189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104771C5AA2A200E8D970 /* AttendanceTableBG.png */; };
+		1891047A1C5AA3B800E8D970 /* AttendanceTableSeparator.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104791C5AA3B800E8D970 /* AttendanceTableSeparator.png */; };
+		1891047D1C5AAAE400E8D970 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1891047C1C5AAAE400E8D970 /* CommentsViewController.m */; };
+		189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104821C5AAC0F00E8D970 /* CommentsTableViewCell.m */; };
+		189104851C5AAC0F00E8D970 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189104831C5AAC0F00E8D970 /* CommentsTableViewCell.xib */; };
+		189104881C5AB4FA00E8D970 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104871C5AB4FA00E8D970 /* ContactUsViewController.m */; };
 		18CF25411C3AF90F00F9F303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25401C3AF90F00F9F303 /* main.m */; };
 		18CF25441C3AF90F00F9F303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25431C3AF90F00F9F303 /* AppDelegate.m */; };
 		18CF25471C3AF90F00F9F303 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25461C3AF90F00F9F303 /* ViewController.m */; };
@@ -19,7 +27,7 @@
 		D40D93261C524113001C8ECC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93251C524113001C8ECC /* HomeViewController.m */; };
 		D40D93281C5248A5001C8ECC /* Person.png in Resources */ = {isa = PBXBuildFile; fileRef = D40D93271C5248A5001C8ECC /* Person.png */; };
 		D40D932B1C5248C0001C8ECC /* SideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D932A1C5248C0001C8ECC /* SideMenuViewController.m */; };
-		D40D93341C52572D001C8ECC /* SubjectScoresListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93331C52572D001C8ECC /* SubjectScoresListViewController.m */; };
+		D40D93341C52572D001C8ECC /* SubjectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93331C52572D001C8ECC /* SubjectListViewController.m */; };
 		D40D93411C52582F001C8ECC /* ScoresListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D933C1C52582F001C8ECC /* ScoresListTableViewCell.m */; };
 		D40D93421C52582F001C8ECC /* ScoresListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40D933D1C52582F001C8ECC /* ScoresListTableViewCell.xib */; };
 		D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93461C525E39001C8ECC /* SideMenuTableViewCell.m */; };
@@ -94,6 +102,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		189104701C5A9CA800E8D970 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
+		189104711C5A9CA800E8D970 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
+		189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceHeadeBG.png; sourceTree = "<group>"; };
+		189104771C5AA2A200E8D970 /* AttendanceTableBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceTableBG.png; sourceTree = "<group>"; };
+		189104791C5AA3B800E8D970 /* AttendanceTableSeparator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceTableSeparator.png; sourceTree = "<group>"; };
+		1891047B1C5AAAE400E8D970 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		1891047C1C5AAAE400E8D970 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
+		189104811C5AAC0F00E8D970 /* CommentsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewCell.h; sourceTree = "<group>"; };
+		189104821C5AAC0F00E8D970 /* CommentsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewCell.m; sourceTree = "<group>"; };
+		189104831C5AAC0F00E8D970 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
+		189104861C5AB4FA00E8D970 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
+		189104871C5AB4FA00E8D970 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
 		18CF253C1C3AF90F00F9F303 /* CoachingClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachingClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF25401C3AF90F00F9F303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CF25421C3AF90F00F9F303 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,8 +137,8 @@
 		D40D93271C5248A5001C8ECC /* Person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Person.png; sourceTree = "<group>"; };
 		D40D93291C5248C0001C8ECC /* SideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuViewController.h; sourceTree = "<group>"; };
 		D40D932A1C5248C0001C8ECC /* SideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuViewController.m; sourceTree = "<group>"; };
-		D40D93321C52572D001C8ECC /* SubjectScoresListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectScoresListViewController.h; sourceTree = "<group>"; };
-		D40D93331C52572D001C8ECC /* SubjectScoresListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectScoresListViewController.m; sourceTree = "<group>"; };
+		D40D93321C52572D001C8ECC /* SubjectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectListViewController.h; sourceTree = "<group>"; };
+		D40D93331C52572D001C8ECC /* SubjectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectListViewController.m; sourceTree = "<group>"; };
 		D40D933B1C52582F001C8ECC /* ScoresListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresListTableViewCell.h; sourceTree = "<group>"; };
 		D40D933C1C52582F001C8ECC /* ScoresListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoresListTableViewCell.m; sourceTree = "<group>"; };
 		D40D933D1C52582F001C8ECC /* ScoresListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScoresListTableViewCell.xib; sourceTree = "<group>"; };
@@ -279,8 +299,14 @@
 				D40D93251C524113001C8ECC /* HomeViewController.m */,
 				D40D93291C5248C0001C8ECC /* SideMenuViewController.h */,
 				D40D932A1C5248C0001C8ECC /* SideMenuViewController.m */,
-				D40D93321C52572D001C8ECC /* SubjectScoresListViewController.h */,
-				D40D93331C52572D001C8ECC /* SubjectScoresListViewController.m */,
+				D40D93321C52572D001C8ECC /* SubjectListViewController.h */,
+				D40D93331C52572D001C8ECC /* SubjectListViewController.m */,
+				189104701C5A9CA800E8D970 /* AttendanceViewController.h */,
+				189104711C5A9CA800E8D970 /* AttendanceViewController.m */,
+				1891047B1C5AAAE400E8D970 /* CommentsViewController.h */,
+				1891047C1C5AAAE400E8D970 /* CommentsViewController.m */,
+				189104861C5AB4FA00E8D970 /* ContactUsViewController.h */,
+				189104871C5AB4FA00E8D970 /* ContactUsViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -330,6 +356,9 @@
 				D40D933B1C52582F001C8ECC /* ScoresListTableViewCell.h */,
 				D40D933C1C52582F001C8ECC /* ScoresListTableViewCell.m */,
 				D40D933D1C52582F001C8ECC /* ScoresListTableViewCell.xib */,
+				189104811C5AAC0F00E8D970 /* CommentsTableViewCell.h */,
+				189104821C5AAC0F00E8D970 /* CommentsTableViewCell.m */,
+				189104831C5AAC0F00E8D970 /* CommentsTableViewCell.xib */,
 			);
 			path = "Custom Controls";
 			sourceTree = "<group>";
@@ -458,6 +487,9 @@
 		D4D8AF321C50E77500FF883A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				189104791C5AA3B800E8D970 /* AttendanceTableSeparator.png */,
+				189104771C5AA2A200E8D970 /* AttendanceTableBG.png */,
+				189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */,
 				D40D93271C5248A5001C8ECC /* Person.png */,
 				D4D8AF351C50E77500FF883A /* AllTestTab.png */,
 				D4D8AF381C50E77500FF883A /* attendance.png */,
@@ -593,6 +625,7 @@
 				18CF254F1C3AF90F00F9F303 /* LaunchScreen.storyboard in Resources */,
 				D4D8AF871C50E77500FF883A /* contact.png in Resources */,
 				D4D8AF751C50E77500FF883A /* attendance_tab.png in Resources */,
+				189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */,
 				18CF254C1C3AF90F00F9F303 /* Assets.xcassets in Resources */,
 				D4D8AF9C1C50E77500FF883A /* Splash.png in Resources */,
 				D4D8AF8A1C50E77500FF883A /* contact_tab.png in Resources */,
@@ -606,11 +639,14 @@
 				D4D8AF841C50E77500FF883A /* comments_tab.png in Resources */,
 				D4D8AF931C50E77500FF883A /* Menu.png in Resources */,
 				18CF254A1C3AF90F00F9F303 /* Main.storyboard in Resources */,
+				189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */,
+				1891047A1C5AA3B800E8D970 /* AttendanceTableSeparator.png in Resources */,
 				D4D8AF991C50E77500FF883A /* performance_tab.png in Resources */,
 				D4D8AF1A1C50DCEB00FF883A /* SVProgressHUD.bundle in Resources */,
 				D4D8AF7E1C50E77500FF883A /* class_icon_inner.png in Resources */,
 				D4D8AF6F1C50E77500FF883A /* AllTestTab.png in Resources */,
 				D40D93491C525E39001C8ECC /* SideMenuTableViewCell.xib in Resources */,
+				189104851C5AAC0F00E8D970 /* CommentsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,6 +679,7 @@
 				D40D932B1C5248C0001C8ECC /* SideMenuViewController.m in Sources */,
 				D4D8AF1B1C50DCEB00FF883A /* SVProgressHUD.m in Sources */,
 				D4D8AF161C50DCEB00FF883A /* UIProgressView+AFNetworking.m in Sources */,
+				1891047D1C5AAAE400E8D970 /* CommentsViewController.m in Sources */,
 				D4D8AF1C1C50DCEB00FF883A /* SVRadialGradientLayer.m in Sources */,
 				D40D93231C523EDE001C8ECC /* SWRevealViewController.m in Sources */,
 				D4D8AF2A1C50DF0600FF883A /* FMDatabase.m in Sources */,
@@ -655,7 +692,8 @@
 				D4D8AED31C50DCD300FF883A /* DataSyncManager.m in Sources */,
 				D4D8AF151C50DCEB00FF883A /* UIImageView+AFNetworking.m in Sources */,
 				D4D8AF0A1C50DCEB00FF883A /* AFHTTPSessionManager.m in Sources */,
-				D40D93341C52572D001C8ECC /* SubjectScoresListViewController.m in Sources */,
+				189104881C5AB4FA00E8D970 /* ContactUsViewController.m in Sources */,
+				D40D93341C52572D001C8ECC /* SubjectListViewController.m in Sources */,
 				D4D8AF121C50DCEB00FF883A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D4D8AF111C50DCEB00FF883A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				18CF25411C3AF90F00F9F303 /* main.m in Sources */,
@@ -664,6 +702,7 @@
 				D4D8AED71C50DCD300FF883A /* YRCoverFlowLayout.m in Sources */,
 				D40D93261C524113001C8ECC /* HomeViewController.m in Sources */,
 				D40D93411C52582F001C8ECC /* ScoresListTableViewCell.m in Sources */,
+				189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */,
 				D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */,
 				D4D8AF2D1C50DF0600FF883A /* FMDatabaseQueue.m in Sources */,
 				D4D8AF0E1C50DCEB00FF883A /* AFURLRequestSerialization.m in Sources */,
@@ -671,6 +710,7 @@
 				D4D8AF181C50DCEB00FF883A /* UIWebView+AFNetworking.m in Sources */,
 				D4D8AF0F1C50DCEB00FF883A /* AFURLResponseSerialization.m in Sources */,
 				D4D8AF2E1C50DF0600FF883A /* FMResultSet.m in Sources */,
+				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
 				D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */,
 				D4D8AF2B1C50DF0600FF883A /* FMDatabaseAdditions.m in Sources */,
 			);

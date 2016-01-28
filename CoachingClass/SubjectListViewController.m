@@ -6,14 +6,14 @@
 //  Copyright © 2016 Star Deep. All rights reserved.
 //
 
-#import "SubjectScoresListViewController.h"
+#import "SubjectListViewController.h"
 #import "ScoresListTableViewCell.h"
 
-@interface SubjectScoresListViewController ()
+@interface SubjectListViewController ()
 
 @end
 
-@implementation SubjectScoresListViewController
+@implementation SubjectListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

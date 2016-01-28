@@ -1,5 +1,5 @@
 //
-//  SubjectScoresListViewController.h
+//  SubjectListViewController.h
 //  CoachingClass
 //
 //  Created by Dipen Sekhsaria on 22/01/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SubjectScoresListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface SubjectListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
     
     NSMutableArray* tableArr;
     
