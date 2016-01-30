@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		186BAE831C5C9C6C00F3C00D /* SubjectGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAE821C5C9C6C00F3C00D /* SubjectGraphViewController.m */; };
+		186BAEB61C5CB04D00F3C00D /* GraphBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEB51C5CB04D00F3C00D /* GraphBaseViewController.m */; };
+		186BAEBB1C5CB3CE00F3C00D /* BalloonMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEB81C5CB3CE00F3C00D /* BalloonMarker.swift */; };
+		186BAEBC1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEBA1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m */; };
+		186BAEC71C5CB6BA00F3C00D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186BAE8C1C5CA11400F3C00D /* Charts.framework */; };
+		186BAEC81C5CB6BA00F3C00D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 186BAE8C1C5CA11400F3C00D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		186BAECF1C5CBC9500F3C00D /* GraphBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BAECE1C5CBC9500F3C00D /* GraphBG.png */; };
 		189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104711C5A9CA800E8D970 /* AttendanceViewController.m */; };
 		189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */; };
 		189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104771C5AA2A200E8D970 /* AttendanceTableBG.png */; };
@@ -86,6 +92,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		186BAE8B1C5CA11400F3C00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186BAE851C5CA11400F3C00D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		186BAE8F1C5CA11400F3C00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186BAE851C5CA11400F3C00D /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
+		186BAEC41C5CB69D00F3C00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186BAE851C5CA11400F3C00D /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		186BAEC91C5CB6BA00F3C00D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 186BAE851C5CA11400F3C00D /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
 		18CF25561C3AF91000F9F303 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 18CF25341C3AF90F00F9F303 /* Project object */;
@@ -102,9 +136,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		186BAECB1C5CB6BB00F3C00D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				186BAEC81C5CB6BA00F3C00D /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		186BAE811C5C9C6C00F3C00D /* SubjectGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectGraphViewController.h; sourceTree = "<group>"; };
 		186BAE821C5C9C6C00F3C00D /* SubjectGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectGraphViewController.m; sourceTree = "<group>"; };
+		186BAE851C5CA11400F3C00D /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		186BAE921C5CA55B00F3C00D /* CoachingClass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoachingClass-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		186BAEB41C5CB04D00F3C00D /* GraphBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphBaseViewController.h; sourceTree = "<group>"; };
+		186BAEB51C5CB04D00F3C00D /* GraphBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphBaseViewController.m; sourceTree = "<group>"; };
+		186BAEB81C5CB3CE00F3C00D /* BalloonMarker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BalloonMarker.swift; sourceTree = "<group>"; };
+		186BAEB91C5CB3CE00F3C00D /* MyCustomXValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomXValueFormatter.h; sourceTree = "<group>"; };
+		186BAEBA1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomXValueFormatter.m; sourceTree = "<group>"; };
+		186BAECE1C5CBC9500F3C00D /* GraphBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GraphBG.png; sourceTree = "<group>"; };
 		189104701C5A9CA800E8D970 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		189104711C5A9CA800E8D970 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceHeadeBG.png; sourceTree = "<group>"; };
@@ -242,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4D8AF301C50DF8A00FF883A /* libsqlite3.tbd in Frameworks */,
+				186BAEC71C5CB6BA00F3C00D /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +319,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186BAE861C5CA11400F3C00D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				186BAE8C1C5CA11400F3C00D /* Charts.framework */,
+				186BAE901C5CA11400F3C00D /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		186BAEB71C5CB3CE00F3C00D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				186BAEB81C5CB3CE00F3C00D /* BalloonMarker.swift */,
+				186BAEB91C5CB3CE00F3C00D /* MyCustomXValueFormatter.h */,
+				186BAEBA1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		18CF25331C3AF90E00F9F303 = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +345,7 @@
 				18CF25581C3AF91000F9F303 /* CoachingClassTests */,
 				18CF25631C3AF91000F9F303 /* CoachingClassUITests */,
 				18CF253D1C3AF90F00F9F303 /* Products */,
+				186BAE851C5CA11400F3C00D /* Charts.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,6 +362,7 @@
 		18CF253E1C3AF90F00F9F303 /* CoachingClass */ = {
 			isa = PBXGroup;
 			children = (
+				186BAEB71C5CB3CE00F3C00D /* Components */,
 				D40D933A1C52582F001C8ECC /* Custom Controls */,
 				D4D8AF321C50E77500FF883A /* Resources */,
 				D4D8AED81C50DCD800FF883A /* Library */,
@@ -319,6 +397,7 @@
 		18CF253F1C3AF90F00F9F303 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				186BAE921C5CA55B00F3C00D /* CoachingClass-Bridging-Header.h */,
 				18CF25401C3AF90F00F9F303 /* main.m */,
 				D4D8AF1D1C50DD0A00FF883A /* PrefixHeader.pch */,
 			);
@@ -371,6 +450,8 @@
 		D4D8AEC51C50DCD300FF883A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				186BAEB41C5CB04D00F3C00D /* GraphBaseViewController.h */,
+				186BAEB51C5CB04D00F3C00D /* GraphBaseViewController.m */,
 				D4D8AEC61C50DCD300FF883A /* Constants.h */,
 				D4D8AEC71C50DCD300FF883A /* DataSyncManager.h */,
 				D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */,
@@ -492,6 +573,7 @@
 		D4D8AF321C50E77500FF883A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				186BAECE1C5CBC9500F3C00D /* GraphBG.png */,
 				189104791C5AA3B800E8D970 /* AttendanceTableSeparator.png */,
 				189104771C5AA2A200E8D970 /* AttendanceTableBG.png */,
 				189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */,
@@ -529,10 +611,13 @@
 				18CF25381C3AF90F00F9F303 /* Sources */,
 				18CF25391C3AF90F00F9F303 /* Frameworks */,
 				18CF253A1C3AF90F00F9F303 /* Resources */,
+				186BAECB1C5CB6BB00F3C00D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				186BAEC51C5CB69D00F3C00D /* PBXTargetDependency */,
+				186BAECA1C5CB6BA00F3C00D /* PBXTargetDependency */,
 			);
 			name = CoachingClass;
 			productName = CoachingClass;
@@ -608,6 +693,12 @@
 			mainGroup = 18CF25331C3AF90E00F9F303;
 			productRefGroup = 18CF253D1C3AF90F00F9F303 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 186BAE861C5CA11400F3C00D /* Products */;
+					ProjectRef = 186BAE851C5CA11400F3C00D /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				18CF253B1C3AF90F00F9F303 /* CoachingClass */,
@@ -616,6 +707,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		186BAE8C1C5CA11400F3C00D /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 186BAE8B1C5CA11400F3C00D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		186BAE901C5CA11400F3C00D /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 186BAE8F1C5CA11400F3C00D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		18CF253A1C3AF90F00F9F303 /* Resources */ = {
@@ -652,6 +760,7 @@
 				D4D8AF6F1C50E77500FF883A /* AllTestTab.png in Resources */,
 				D40D93491C525E39001C8ECC /* SideMenuTableViewCell.xib in Resources */,
 				189104851C5AAC0F00E8D970 /* CommentsTableViewCell.xib in Resources */,
+				186BAECF1C5CBC9500F3C00D /* GraphBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,10 +819,13 @@
 				189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */,
 				D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */,
 				D4D8AF2D1C50DF0600FF883A /* FMDatabaseQueue.m in Sources */,
+				186BAEB61C5CB04D00F3C00D /* GraphBaseViewController.m in Sources */,
 				D4D8AF0E1C50DCEB00FF883A /* AFURLRequestSerialization.m in Sources */,
+				186BAEBC1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m in Sources */,
 				D4D8AF0B1C50DCEB00FF883A /* AFNetworkReachabilityManager.m in Sources */,
 				D4D8AF181C50DCEB00FF883A /* UIWebView+AFNetworking.m in Sources */,
 				186BAE831C5C9C6C00F3C00D /* SubjectGraphViewController.m in Sources */,
+				186BAEBB1C5CB3CE00F3C00D /* BalloonMarker.swift in Sources */,
 				D4D8AF0F1C50DCEB00FF883A /* AFURLResponseSerialization.m in Sources */,
 				D4D8AF2E1C50DF0600FF883A /* FMResultSet.m in Sources */,
 				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
@@ -741,6 +853,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		186BAEC51C5CB69D00F3C00D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 186BAEC41C5CB69D00F3C00D /* PBXContainerItemProxy */;
+		};
+		186BAECA1C5CB6BA00F3C00D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Charts-iOS";
+			targetProxy = 186BAEC91C5CB6BA00F3C00D /* PBXContainerItemProxy */;
+		};
 		18CF25571C3AF91000F9F303 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18CF253B1C3AF90F00F9F303 /* CoachingClass */;
@@ -793,6 +915,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -836,6 +959,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -857,11 +981,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoachingClass",
+					"$(PROJECT_DIR)/CoachingClass/ios",
+				);
 				GCC_PREFIX_HEADER = CoachingClass/PrefixHeader.pch;
 				INFOPLIST_FILE = CoachingClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -869,11 +1002,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CoachingClass",
+					"$(PROJECT_DIR)/CoachingClass/ios",
+				);
 				GCC_PREFIX_HEADER = CoachingClass/PrefixHeader.pch;
 				INFOPLIST_FILE = CoachingClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 			};
 			name = Release;
 		};

@@ -946,6 +946,7 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
+                                            <action selector="backButtonTapped:" destination="n3j-Zw-f7C" eventType="touchUpInside" id="JYx-M4-fjK"/>
                                             <action selector="backButtonTapped:" destination="FFV-nI-ZIk" eventType="touchUpInside" id="Ljf-tU-gxV"/>
                                         </connections>
                                     </button>
@@ -960,15 +961,53 @@
                                     <constraint firstAttribute="bottom" secondItem="AAF-QB-sw4" secondAttribute="bottom" constant="8" id="yJQ-hb-8XN"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKc-jk-9Ur" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="72" width="560" height="403"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZR-Wi-QVm">
+                                <rect key="frame" x="20" y="491" width="73" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="P0h-ix-kIw"/>
+                                    <constraint firstAttribute="height" constant="21" id="ccw-5K-Sdm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="“Student Name” is showing improvements compared to previous test in subject “Subject Name”" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KTd-LF-fVK">
+                                <rect key="frame" x="20" y="520" width="560" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="LId-54-gzo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KTd-LF-fVK" firstAttribute="leading" secondItem="92I-nI-X1i" secondAttribute="leadingMargin" id="1ut-1A-UW2"/>
+                            <constraint firstItem="KTd-LF-fVK" firstAttribute="top" secondItem="mZR-Wi-QVm" secondAttribute="bottom" constant="8" id="5Uq-lE-ghK"/>
                             <constraint firstItem="E8K-EJ-YVM" firstAttribute="top" secondItem="92I-nI-X1i" secondAttribute="topMargin" id="6Uc-Yy-BqT"/>
+                            <constraint firstItem="mZR-Wi-QVm" firstAttribute="leading" secondItem="92I-nI-X1i" secondAttribute="leadingMargin" id="Ayg-Aa-6Aw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="E8K-EJ-YVM" secondAttribute="trailing" constant="-20" id="Gui-LF-K0n"/>
                             <constraint firstItem="E8K-EJ-YVM" firstAttribute="leading" secondItem="92I-nI-X1i" secondAttribute="leadingMargin" constant="-20" id="MgM-Qy-9Se"/>
+                            <constraint firstItem="1w5-wZ-Pjp" firstAttribute="top" secondItem="KTd-LF-fVK" secondAttribute="bottom" constant="20" id="PA4-gD-ree"/>
+                            <constraint firstItem="mZR-Wi-QVm" firstAttribute="top" secondItem="SKc-jk-9Ur" secondAttribute="bottom" constant="16" id="RsE-mi-oaA"/>
+                            <constraint firstItem="SKc-jk-9Ur" firstAttribute="top" secondItem="E8K-EJ-YVM" secondAttribute="bottom" constant="8" id="Xjh-wX-9ag"/>
+                            <constraint firstItem="KTd-LF-fVK" firstAttribute="trailing" secondItem="92I-nI-X1i" secondAttribute="trailingMargin" id="f7a-bi-ZtZ"/>
+                            <constraint firstItem="SKc-jk-9Ur" firstAttribute="trailing" secondItem="92I-nI-X1i" secondAttribute="trailingMargin" id="kvS-f8-ZeX"/>
+                            <constraint firstItem="SKc-jk-9Ur" firstAttribute="leading" secondItem="92I-nI-X1i" secondAttribute="leadingMargin" id="smm-JA-hl9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chartView" destination="SKc-jk-9Ur" id="wmM-Fz-tki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUy-Y9-o4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

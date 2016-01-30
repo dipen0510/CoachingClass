@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GraphBaseViewController.h"
+#import <Charts/Charts.h>
 
-@interface SubjectGraphViewController : UIViewController
+@interface SubjectGraphViewController : GraphBaseViewController
+
+@property (weak, nonatomic) IBOutlet BarChartView *chartView;
+- (IBAction)backButtonTapped:(id)sender;
 
 @end
