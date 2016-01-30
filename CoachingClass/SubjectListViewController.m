@@ -98,6 +98,8 @@
     
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
+    [self performSegueWithIdentifier:@"showSubjectGraphSegue" sender:nil];
+    
     
 }
 

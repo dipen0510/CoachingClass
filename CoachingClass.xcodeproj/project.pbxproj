@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186BAE831C5C9C6C00F3C00D /* SubjectGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAE821C5C9C6C00F3C00D /* SubjectGraphViewController.m */; };
 		189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104711C5A9CA800E8D970 /* AttendanceViewController.m */; };
 		189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */; };
 		189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104771C5AA2A200E8D970 /* AttendanceTableBG.png */; };
@@ -102,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186BAE811C5C9C6C00F3C00D /* SubjectGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectGraphViewController.h; sourceTree = "<group>"; };
+		186BAE821C5C9C6C00F3C00D /* SubjectGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectGraphViewController.m; sourceTree = "<group>"; };
 		189104701C5A9CA800E8D970 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		189104711C5A9CA800E8D970 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceHeadeBG.png; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 				D40D932A1C5248C0001C8ECC /* SideMenuViewController.m */,
 				D40D93321C52572D001C8ECC /* SubjectListViewController.h */,
 				D40D93331C52572D001C8ECC /* SubjectListViewController.m */,
+				186BAE811C5C9C6C00F3C00D /* SubjectGraphViewController.h */,
+				186BAE821C5C9C6C00F3C00D /* SubjectGraphViewController.m */,
 				189104701C5A9CA800E8D970 /* AttendanceViewController.h */,
 				189104711C5A9CA800E8D970 /* AttendanceViewController.m */,
 				1891047B1C5AAAE400E8D970 /* CommentsViewController.h */,
@@ -708,6 +713,7 @@
 				D4D8AF0E1C50DCEB00FF883A /* AFURLRequestSerialization.m in Sources */,
 				D4D8AF0B1C50DCEB00FF883A /* AFNetworkReachabilityManager.m in Sources */,
 				D4D8AF181C50DCEB00FF883A /* UIWebView+AFNetworking.m in Sources */,
+				186BAE831C5C9C6C00F3C00D /* SubjectGraphViewController.m in Sources */,
 				D4D8AF0F1C50DCEB00FF883A /* AFURLResponseSerialization.m in Sources */,
 				D4D8AF2E1C50DF0600FF883A /* FMResultSet.m in Sources */,
 				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
