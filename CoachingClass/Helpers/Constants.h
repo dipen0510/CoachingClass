@@ -12,75 +12,15 @@
 
 //API Service keys
 
-#define deviceIdKey @"DeviceID"
-#define deviceTypeIdKey @"DeviceTypeID"
-#define emailKey @"Email"
-#define gcmIdKey @"GcmID"
-#define nameKey @"Name"
-#define verKey @"Ver"
-#define idKey @"ID"
+#define StudentsInfoDetailsKey @"StudentsInfoDetails"
+#define StudentNameKey @"StudentName"
+#define DOBKey @"DOB"
+#define PinCodeKey @"PinCode"
+#define RollNoKey @"RollNo"
+#define GetStudentsInfoDetailsKey @"GetStudentsInfoDetails"
+
 #define statusKey @"Status"
-#define userIdKey @"UserId"
-#define timestampKey @"TimeStamp"
-#define newsDataInfoKey @"NewsDataInfo"
-#define notificationSettingKey @"NotificationSetting"
 
-#define timestampForGetNewsKey @"Timestamp"
-#define DateAndTimeKey @"DateAndTime"
-
-//NEWS CONTENT KEYS
-
-#define ActiveKey @"Active"
-#define ActiveFromKey @"ActiveFrom"
-#define ActiveTillKey @"ActiveTill"
-#define AuthorIdKey @"AuthorId"
-#define AuthorNameKey @"AuthorName"
-#define DateCreatedKey @"DateCreated"
-#define DateModifiedKey @"DateModified"
-#define DetailedStoryKey @"DetailedStory"
-#define HeadingKey @"Heading"
-#define ImpactSoreKey @"ImpactSore"
-#define LatLngKey @"LatLng"
-#define LocKey @"Loc"
-#define NameKey @"Name"
-#define NewsCommentsKey @"NewsComments"
-#define NewsGenresKey @"NewsGenres"
-#define NewsIdKey @"NewsId"
-#define NewsImageKey @"NewsImage"
-#define NewsInfographicsKey @"NewsInfographics"
-#define NewsTimeStampKey @"NewsTimeStamp"
-#define SubHeadingKey @"SubHeading"
-#define SummaryKey @"Summary"
-#define TagsKey @"Tags"
-#define isLeadStoryKey @"isLeadStory"
-#define isTrendingKey @"isTrending"
-#define HeadlineColorKey @"HeadlineColor"
-#define SecondLeadImageKey @"SecondLeadImage"
-#define WebImageKey @"WebImage"
-#define AuthorBioKey @"AuthorBio"
-
-#define CommentsKey @"Comments"
-#define NewsCommentsIdKey @"NewsCommentsId"
-#define UserKey @"User"
-#define GenreKey @"Genre"
-#define GenreIdKey @"GenreId"
-#define NewsGenreIdKey @"NewsGenreId"
-#define NewsInfographicsIdKey @"NewsInfographicId"
-#define NewsImageKey @"NewsImage"
-
-#define MasterGenreIdKey @"GenreID"
-#define ListOfAllGenresKey @"ListOfAllGenres"
-
-#define CodeKey @"Code"
-
-
-//MISC
-
-#define iOSDeviceType @"2"
-#define isFirstRun @"isFirstRun"
-#define myNewsUserDefaultsKey @"myNewsUserDefaultsKey"
-#define SecondRunKey @"SecondRunv1.0.2"
-#define kDeviceToken @"deviceToken"
 #endif
 
 

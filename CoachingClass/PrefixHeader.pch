@@ -14,5 +14,8 @@
 
 #import "SVProgressHUD.h"
 #import "SWRevealViewController.h"
+#import "Constants.h"
+#import "Settings.h"
+#import "DataSyncManager.h"
 
 #endif /* PrefixHeader_pch */

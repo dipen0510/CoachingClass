@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    studentArr = [[NSMutableArray alloc] init];
+    
     [self setupUIForInitialView];
     
 }
@@ -69,13 +71,149 @@
 }
 
 
+#pragma mark - API Handling
+
+- (void) startSubmitStudentService {
+    
+    [SVProgressHUD showWithStatus:@"Validating student info"];
+    
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kSubmitStudentService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForSubmitStudentService]];
+    
+}
+
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(SubmitStudentDetailsResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    
+    if ([requestServiceKey isEqualToString:kSubmitStudentService]) {
+        
+        [SVProgressHUD dismiss];
+        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+        
+    }
+    
+    
+}
+
+
+-(void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    [SVProgressHUD dismiss];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [self showMessage:errorMsg withTitle:@"Newtwork Error"];
+    }
+    else {
+        [self showMessage:@"Request timed out, please try again later." withTitle:@"Newtwork Error"];
+    }
+    
+    return;
+    
+}
+
+
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForSubmitStudentService {
+    
+    SumbitStudentDetailsRequestObject* obj = [[SumbitStudentDetailsRequestObject alloc] init];
+    obj.studentsInfoDetails = studentArr;
+    
+    return [obj createRequestDictionary];
+    
+}
+
+- (NSMutableDictionary *) prepareStudentObjectFromCurrent {
+    
+    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
+    
+    [dict setObject:self.studentNameTextField.text forKey:StudentNameKey];
+    [dict setObject:self.rollNumberTextField.text forKey:RollNoKey];
+    [dict setObject:self.pinCodeTextField.text forKey:PinCodeKey];
+    [dict setObject:self.dateOfBirthTextField.text forKey:DOBKey];
+    
+    return dict;
+    
+}
+
+
+#pragma mark - User Action
+
+
+- (BOOL) isFormValid {
+    
+    NSString* name = self.studentNameTextField.text;
+    NSString* rollno = self.rollNumberTextField.text;
+    NSString* dob = self.dateOfBirthTextField.text;
+    NSString* pincode = self.pinCodeTextField.text;
+    
+    if (!name || [name isEqualToString:@""]) {
+        return false;
+    }
+    if (!rollno || [rollno isEqualToString:@""]) {
+        return false;
+    }
+    if (!dob || [dob isEqualToString:@""]) {
+        return false;
+    }
+    if (!pincode || [pincode isEqualToString:@""]) {
+        return false;
+    }
+    
+    
+//    
+//    NSCharacterSet *s = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@."];
+//    s = [s invertedSet];
+//    NSRange r = [user rangeOfCharacterFromSet:s];
+//    if (r.location != NSNotFound) {
+//        return false;
+//    }
+    
+    
+    
+    return true;
+    
+}
+
+
 - (IBAction)submitButtonTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+    if ([self isFormValid]) {
+        
+        [studentArr addObject:[self prepareStudentObjectFromCurrent]];
+        [self startSubmitStudentService];
+        
+    }
+    else {
+        
+        [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
+        
+    }
     
 }
 
 - (IBAction)addMoreStudentButtonTapped:(id)sender {
+    
+    if ([self isFormValid]) {
+        
+        [studentArr addObject:[self prepareStudentObjectFromCurrent]];
+        [self clearFormData];
+        
+    }
+    else {
+        
+        [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
+        
+    }
+    
+    
 }
 
 
@@ -84,5 +222,38 @@
     [self.view endEditing:YES];
     
 }
+
+- (void) clearFormData {
+    
+    self.studentNameTextField.text = @"";
+    self.dateOfBirthTextField.text = @"";
+    self.pinCodeTextField.text = @"";
+    self.rollNumberTextField.text = @"";
+    
+    [self.view endEditing:YES];
+    
+}
+
+
+
+#pragma mark - Show Alert
+
+-(void)showMessage:(NSString*)message withTitle:(NSString *)title
+{
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:title
+                                  message:message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        //do something when click button
+    }];
+    [alert addAction:okAction];
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [vc presentViewController:alert animated:YES completion:nil];
+}
+
 
 @end

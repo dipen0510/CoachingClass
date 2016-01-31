@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SumbitStudentDetailsRequestObject.h"
+#import "SubmitStudentDetailsResponseObject.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <DataSyncManagerDelegate> {
+    
+    NSMutableArray* studentArr;
+    
+}
 
 @property (weak, nonatomic) IBOutlet UITextField *studentNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *rollNumberTextField;

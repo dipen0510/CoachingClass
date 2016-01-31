@@ -14,6 +14,9 @@
 		186BAEC71C5CB6BA00F3C00D /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186BAE8C1C5CA11400F3C00D /* Charts.framework */; };
 		186BAEC81C5CB6BA00F3C00D /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 186BAE8C1C5CA11400F3C00D /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		186BAECF1C5CBC9500F3C00D /* GraphBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 186BAECE1C5CBC9500F3C00D /* GraphBG.png */; };
+		186BAEEB1C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */; };
+		186BAEF01C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */; };
+		186BAEF51C5E884F00F3C00D /* SingleNewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEE61C5E884F00F3C00D /* SingleNewsObject.m */; };
 		189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104711C5A9CA800E8D970 /* AttendanceViewController.m */; };
 		189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */; };
 		189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104771C5AA2A200E8D970 /* AttendanceTableBG.png */; };
@@ -161,6 +164,12 @@
 		186BAEB91C5CB3CE00F3C00D /* MyCustomXValueFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCustomXValueFormatter.h; sourceTree = "<group>"; };
 		186BAEBA1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCustomXValueFormatter.m; sourceTree = "<group>"; };
 		186BAECE1C5CBC9500F3C00D /* GraphBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GraphBG.png; sourceTree = "<group>"; };
+		186BAED11C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumbitStudentDetailsRequestObject.h; sourceTree = "<group>"; };
+		186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumbitStudentDetailsRequestObject.m; sourceTree = "<group>"; };
+		186BAEDB1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitStudentDetailsResponseObject.h; sourceTree = "<group>"; };
+		186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitStudentDetailsResponseObject.m; sourceTree = "<group>"; };
+		186BAEE51C5E884F00F3C00D /* SingleNewsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleNewsObject.h; sourceTree = "<group>"; };
+		186BAEE61C5E884F00F3C00D /* SingleNewsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleNewsObject.m; sourceTree = "<group>"; };
 		189104701C5A9CA800E8D970 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		189104711C5A9CA800E8D970 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceHeadeBG.png; sourceTree = "<group>"; };
@@ -338,6 +347,35 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		186BAED01C5E884F00F3C00D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				186BAEF81C5E897000F3C00D /* Request */,
+				186BAEF91C5E897800F3C00D /* Response */,
+				186BAEE51C5E884F00F3C00D /* SingleNewsObject.h */,
+				186BAEE61C5E884F00F3C00D /* SingleNewsObject.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		186BAEF81C5E897000F3C00D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				186BAED11C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.h */,
+				186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		186BAEF91C5E897800F3C00D /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				186BAEDB1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.h */,
+				186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */,
+			);
+			name = Response;
+			sourceTree = "<group>";
+		};
 		18CF25331C3AF90E00F9F303 = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +400,7 @@
 		18CF253E1C3AF90F00F9F303 /* CoachingClass */ = {
 			isa = PBXGroup;
 			children = (
+				186BAED01C5E884F00F3C00D /* Model */,
 				186BAEB71C5CB3CE00F3C00D /* Components */,
 				D40D933A1C52582F001C8ECC /* Custom Controls */,
 				D4D8AF321C50E77500FF883A /* Resources */,
@@ -790,12 +829,15 @@
 				D4D8AF0D1C50DCEB00FF883A /* AFURLConnectionOperation.m in Sources */,
 				D4D8AF171C50DCEB00FF883A /* UIRefreshControl+AFNetworking.m in Sources */,
 				D4D8AF141C50DCEB00FF883A /* UIButton+AFNetworking.m in Sources */,
+				186BAEEB1C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m in Sources */,
 				D40D932B1C5248C0001C8ECC /* SideMenuViewController.m in Sources */,
 				D4D8AF1B1C50DCEB00FF883A /* SVProgressHUD.m in Sources */,
 				D4D8AF161C50DCEB00FF883A /* UIProgressView+AFNetworking.m in Sources */,
 				1891047D1C5AAAE400E8D970 /* CommentsViewController.m in Sources */,
 				D4D8AF1C1C50DCEB00FF883A /* SVRadialGradientLayer.m in Sources */,
 				D40D93231C523EDE001C8ECC /* SWRevealViewController.m in Sources */,
+				186BAEF01C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m in Sources */,
+				186BAEF51C5E884F00F3C00D /* SingleNewsObject.m in Sources */,
 				D4D8AF2A1C50DF0600FF883A /* FMDatabase.m in Sources */,
 				D4D8AF081C50DCEB00FF883A /* AFHTTPRequestOperation.m in Sources */,
 				18CF25471C3AF90F00F9F303 /* ViewController.m in Sources */,

@@ -16,9 +16,6 @@
 -(void) didFinishServiceWithSuccess:(id)responseData andServiceKey:(NSString *)requestServiceKey;
 -(void) didFinishServiceWithFailure:(NSString *)errorMsg;
 
-@optional
-
-- (void) didUpdateLatestNewsContent;
 
 @end
 

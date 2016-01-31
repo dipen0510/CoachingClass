@@ -42,24 +42,25 @@
     leftAxis.labelCount = 8;
     leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
     leftAxis.valueFormatter.maximumFractionDigits = 1;
-    leftAxis.valueFormatter.negativeSuffix = @" $";
-    leftAxis.valueFormatter.positiveSuffix = @" $";
+//    leftAxis.valueFormatter.negativeSuffix = @" $";
+//    leftAxis.valueFormatter.positiveSuffix = @" $";
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
     leftAxis.spaceTop = 0.15;
+    leftAxis.labelTextColor = [UIColor whiteColor];
     
     ChartYAxis *rightAxis = _chartView.rightAxis;
-    rightAxis.enabled = YES;
-    rightAxis.drawGridLinesEnabled = NO;
-    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
-    rightAxis.labelCount = 8;
-    rightAxis.valueFormatter = leftAxis.valueFormatter;
-    rightAxis.spaceTop = 0.15;
+    rightAxis.enabled = NO;
+//    rightAxis.drawGridLinesEnabled = NO;
+//    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
+//    rightAxis.labelCount = 8;
+//    rightAxis.valueFormatter = leftAxis.valueFormatter;
+//    rightAxis.spaceTop = 0.15;
     
-    _chartView.legend.position = ChartLegendPositionBelowChartLeft;
-    _chartView.legend.form = ChartLegendFormSquare;
-    _chartView.legend.formSize = 9.0;
-    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
-    _chartView.legend.xEntrySpace = 4.0;
+//    _chartView.legend.position = ChartLegendPositionBelowChartLeft;
+//    _chartView.legend.form = ChartLegendFormSquare;
+//    _chartView.legend.formSize = 9.0;
+//    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
+//    _chartView.legend.xEntrySpace = 4.0;
     _chartView.legend.enabled = NO;
 
     [self setDataCount:10 range:100];
