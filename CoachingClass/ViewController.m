@@ -93,6 +93,7 @@
     if ([requestServiceKey isEqualToString:kSubmitStudentService]) {
         
         [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"Student Info Validated Successfully"];
         [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
         
         

@@ -8,6 +8,7 @@
 
 #import "DataSyncManager.h"
 #import "SubmitStudentDetailsResponseObject.h"
+#import "GetAttendanceResponseObject.h"
 
 @implementation DataSyncManager
 @synthesize delegate,serviceKey;
@@ -100,9 +101,25 @@
 
 - (id) prepareResponseObjectForServiceKey:(NSString *) responseServiceKey withData:(id)responseObj {
     
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:responseObj options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
     if ([responseServiceKey isEqualToString:kSubmitStudentService] ) {
         
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
         SubmitStudentDetailsResponseObject* response = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetAttendanceService] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetAttendanceResponseObject* response = [[GetAttendanceResponseObject alloc] initWithDictionary:responseObj];
+        
         return response;
         
     }

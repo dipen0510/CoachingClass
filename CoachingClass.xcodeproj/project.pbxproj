@@ -17,6 +17,9 @@
 		186BAEEB1C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */; };
 		186BAEF01C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */; };
 		186BAEF51C5E884F00F3C00D /* SingleNewsObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186BAEE61C5E884F00F3C00D /* SingleNewsObject.m */; };
+		188666991C61403400492007 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188666981C61403400492007 /* SplashViewController.m */; };
+		1886669D1C6142AC00492007 /* GetAttendanceRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886669C1C6142AC00492007 /* GetAttendanceRequestObject.m */; };
+		188666A01C61433400492007 /* GetAttendanceResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886669F1C61433400492007 /* GetAttendanceResponseObject.m */; };
 		189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104711C5A9CA800E8D970 /* AttendanceViewController.m */; };
 		189104761C5A9F6100E8D970 /* AttendanceHeadeBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */; };
 		189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 189104771C5AA2A200E8D970 /* AttendanceTableBG.png */; };
@@ -170,6 +173,12 @@
 		186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitStudentDetailsResponseObject.m; sourceTree = "<group>"; };
 		186BAEE51C5E884F00F3C00D /* SingleNewsObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleNewsObject.h; sourceTree = "<group>"; };
 		186BAEE61C5E884F00F3C00D /* SingleNewsObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleNewsObject.m; sourceTree = "<group>"; };
+		188666971C61403400492007 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
+		188666981C61403400492007 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		1886669B1C6142AC00492007 /* GetAttendanceRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAttendanceRequestObject.h; sourceTree = "<group>"; };
+		1886669C1C6142AC00492007 /* GetAttendanceRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAttendanceRequestObject.m; sourceTree = "<group>"; };
+		1886669E1C61433400492007 /* GetAttendanceResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAttendanceResponseObject.h; sourceTree = "<group>"; };
+		1886669F1C61433400492007 /* GetAttendanceResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAttendanceResponseObject.m; sourceTree = "<group>"; };
 		189104701C5A9CA800E8D970 /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
 		189104711C5A9CA800E8D970 /* AttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendanceViewController.m; sourceTree = "<group>"; };
 		189104751C5A9F6100E8D970 /* AttendanceHeadeBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AttendanceHeadeBG.png; sourceTree = "<group>"; };
@@ -363,6 +372,8 @@
 			children = (
 				186BAED11C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.h */,
 				186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */,
+				1886669B1C6142AC00492007 /* GetAttendanceRequestObject.h */,
+				1886669C1C6142AC00492007 /* GetAttendanceRequestObject.m */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -372,6 +383,8 @@
 			children = (
 				186BAEDB1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.h */,
 				186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */,
+				1886669E1C61433400492007 /* GetAttendanceResponseObject.h */,
+				1886669F1C61433400492007 /* GetAttendanceResponseObject.m */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -429,6 +442,8 @@
 				1891047C1C5AAAE400E8D970 /* CommentsViewController.m */,
 				189104861C5AB4FA00E8D970 /* ContactUsViewController.h */,
 				189104871C5AB4FA00E8D970 /* ContactUsViewController.m */,
+				188666971C61403400492007 /* SplashViewController.h */,
+				188666981C61403400492007 /* SplashViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -829,6 +844,7 @@
 				D4D8AF0D1C50DCEB00FF883A /* AFURLConnectionOperation.m in Sources */,
 				D4D8AF171C50DCEB00FF883A /* UIRefreshControl+AFNetworking.m in Sources */,
 				D4D8AF141C50DCEB00FF883A /* UIButton+AFNetworking.m in Sources */,
+				188666991C61403400492007 /* SplashViewController.m in Sources */,
 				186BAEEB1C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m in Sources */,
 				D40D932B1C5248C0001C8ECC /* SideMenuViewController.m in Sources */,
 				D4D8AF1B1C50DCEB00FF883A /* SVProgressHUD.m in Sources */,
@@ -841,6 +857,7 @@
 				D4D8AF2A1C50DF0600FF883A /* FMDatabase.m in Sources */,
 				D4D8AF081C50DCEB00FF883A /* AFHTTPRequestOperation.m in Sources */,
 				18CF25471C3AF90F00F9F303 /* ViewController.m in Sources */,
+				1886669D1C6142AC00492007 /* GetAttendanceRequestObject.m in Sources */,
 				D4D8AF131C50DCEB00FF883A /* UIAlertView+AFNetworking.m in Sources */,
 				D4D8AF091C50DCEB00FF883A /* AFHTTPRequestOperationManager.m in Sources */,
 				18CF25441C3AF90F00F9F303 /* AppDelegate.m in Sources */,
@@ -871,6 +888,7 @@
 				D4D8AF0F1C50DCEB00FF883A /* AFURLResponseSerialization.m in Sources */,
 				D4D8AF2E1C50DF0600FF883A /* FMResultSet.m in Sources */,
 				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
+				188666A01C61433400492007 /* GetAttendanceResponseObject.m in Sources */,
 				D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */,
 				D4D8AF2B1C50DF0600FF883A /* FMDatabaseAdditions.m in Sources */,
 			);
@@ -1024,6 +1042,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1032,9 +1051,11 @@
 				);
 				GCC_PREFIX_HEADER = CoachingClass/PrefixHeader.pch;
 				INFOPLIST_FILE = CoachingClass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e9c70652-206a-405b-97b0-8df78d876a97";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1045,6 +1066,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1053,9 +1075,11 @@
 				);
 				GCC_PREFIX_HEADER = CoachingClass/PrefixHeader.pch;
 				INFOPLIST_FILE = CoachingClass/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e9c70652-206a-405b-97b0-8df78d876a97";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 			};
 			name = Release;

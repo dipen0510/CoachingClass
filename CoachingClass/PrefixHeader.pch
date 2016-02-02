@@ -17,5 +17,6 @@
 #import "Constants.h"
 #import "Settings.h"
 #import "DataSyncManager.h"
+#import "SharedClass.h"
 
 #endif /* PrefixHeader_pch */

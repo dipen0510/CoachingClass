@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AttendanceViewController : UIViewController
+@interface AttendanceViewController : UIViewController<DataSyncManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
 

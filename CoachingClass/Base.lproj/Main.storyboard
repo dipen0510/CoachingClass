@@ -1,11 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="peb-ef-EP8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x6b-Te-RaG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="vqb-WF-KgS">
+            <objects>
+                <viewController id="lRr-Xu-Zbq" customClass="SplashViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T0k-de-dsG"/>
+                        <viewControllerLayoutGuide type="bottom" id="P0I-6q-11Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bu8-2c-E4U">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="W0u-ey-Xxw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P0I-6q-11Y" firstAttribute="top" secondItem="W0u-ey-Xxw" secondAttribute="bottom" id="PDE-qy-uYs"/>
+                            <constraint firstItem="W0u-ey-Xxw" firstAttribute="top" secondItem="Bu8-2c-E4U" secondAttribute="topMargin" id="VMF-qo-Ts5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W0u-ey-Xxw" secondAttribute="trailing" constant="-20" id="asw-Mi-jzd"/>
+                            <constraint firstItem="W0u-ey-Xxw" firstAttribute="leading" secondItem="Bu8-2c-E4U" secondAttribute="leadingMargin" constant="-20" id="pbX-6g-SaP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Icv-ku-NZT"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showLoginSegue" id="rbS-6e-3zD"/>
+                        <segue destination="reG-zk-DEI" kind="show" identifier="showHomeSegue" id="UHt-jd-o4y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3BM-Hn-vKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="-460"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -145,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-395"/>
+            <point key="canvasLocation" x="1898" y="-395"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="ym1-H3-tva">
@@ -257,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaA-F2-32r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2713" y="-395"/>
+            <point key="canvasLocation" x="3525" y="-395"/>
         </scene>
         <!--Attendance View Controller-->
         <scene sceneID="6dl-d3-xvx">
@@ -908,7 +944,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yO5-7Z-L1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3457" y="-394"/>
+            <point key="canvasLocation" x="4269" y="-394"/>
         </scene>
         <!--Subject Graph View Controller-->
         <scene sceneID="9r1-yQ-oTw">
@@ -1012,7 +1048,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUy-Y9-o4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4263" y="-395"/>
+            <point key="canvasLocation" x="5075" y="-395"/>
         </scene>
         <!--Side Menu View Controller-->
         <scene sceneID="ufc-gO-C20">
@@ -1105,27 +1141,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9I-mf-LNk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1871" y="-395"/>
+            <point key="canvasLocation" x="2683" y="-395"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="WMO-2E-3TQ">
+        <scene sceneID="TNY-sH-UR5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="peb-ef-EP8" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="x6b-Te-RaG" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dKL-wW-4in">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Ud-S6-wvH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9q4-Bh-fBm"/>
+                        <segue destination="lRr-Xu-Zbq" kind="relationship" relationship="rootViewController" id="MmT-7p-4XZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aOi-aa-6kA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjk-P3-lpS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217" y="-395"/>
+            <point key="canvasLocation" x="-41" y="-460"/>
         </scene>
     </scenes>
     <resources>
@@ -1136,10 +1172,12 @@
         <image name="Class Logo.png" width="270" height="270"/>
         <image name="Menu.png" width="57" height="36"/>
         <image name="Person.png" width="256" height="256"/>
+        <image name="Splash.png" width="960" height="1698"/>
         <image name="SubjectWiseTab.png" width="921" height="360"/>
         <image name="TestWiseTab.png" width="921" height="360"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UHt-jd-o4y"/>
         <segue reference="faZ-d6-XzJ"/>
     </inferredMetricsTieBreakers>
 </document>
