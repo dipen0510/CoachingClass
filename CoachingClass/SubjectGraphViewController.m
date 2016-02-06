@@ -65,15 +65,12 @@
 
     [self setDataCount:10 range:100];
     
-    UIGraphicsBeginImageContext(_chartView.frame.size);
-    [[UIImage imageNamed:@"GraphBG.png"] drawInRect:_chartView.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    _chartView.backgroundColor = [UIColor colorWithPatternImage:image];
+    _chartView.clipsToBounds = YES;
+    _chartView.backgroundColor = [UIColor colorWithRed:251./255. green:148./255. blue:0 alpha:1.0];
     _chartView.layer.cornerRadius = 10.0;
     
 }
+
 
 - (void)setDataCount:(int)count range:(double)range
 {

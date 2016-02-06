@@ -30,6 +30,20 @@
 #define TotalDaysFromLastWeekKey @"TotalDaysFromLastWeek"
 #define TotalDaysFromStartKey @"TotalDaysFromStart"
 
+//TeacherComments
+#define GetTeachersCommentsDetailsKey @"GetTeachersCommentsDetails"
+#define CommentTimeKey @"CommentTime"
+#define CommentsKey @"Comments"
+#define TeacherNameKey @"TeacherName"
+
+
+//ContactUs
+#define AddressKey @"Address"
+#define EmailKey @"Email"
+#define InfoKey @"Info"
+#define PhoneKey @"Phone"
+#define WebsiteKey @"Website"
+
 #define statusKey @"Status"
 
 #endif

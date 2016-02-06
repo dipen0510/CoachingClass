@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CommentsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    
-    NSMutableArray* commentsContentArr;
+
+@interface CommentsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, DataSyncManagerDelegate> {
     
 }
 
+@property (weak, nonatomic) IBOutlet UITableView *commentsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
 @end

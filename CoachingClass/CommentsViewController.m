@@ -8,8 +8,14 @@
 
 #import "CommentsViewController.h"
 #import "CommentsTableViewCell.h"
+#import "GetTeacherCommentResponseObject.h"
+#import "GetTeacherCommentsRequestObject.h"
 
-@interface CommentsViewController ()
+@interface CommentsViewController () {
+    
+    GetTeacherCommentResponseObject* commentsObj;
+    
+}
 
 @end
 
@@ -19,10 +25,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self generateDataSource];
+    
+    NSString* commentStr = [[SharedClass sharedInstance] loadDataForService:kGetTeacherCommentsService];
+    if (commentStr) {
+        NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:commentStr];
+        commentsObj = [[GetTeacherCommentResponseObject alloc] initWithDictionary:dict];
+    }
+    else {
+        commentsObj = [[GetTeacherCommentResponseObject alloc] init];
+    }
+    
     [self customSetup];
     
 }
+
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [self startGetCommentsService];
+    
+}
+
 
 - (void)customSetup
 {
@@ -37,18 +62,68 @@
     }
 }
 
-- (void) generateDataSource {
+
+
+#pragma mark - API Handling
+
+- (void) startGetCommentsService {
     
-    commentsContentArr = [[NSMutableArray alloc] init];
-    NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
-    [dict setObject:@"Performance" forKey:@"title"];
-    [dict setObject:@"performance_tab.png" forKey:@"image"];
-    [commentsContentArr addObject:dict];
+    [SVProgressHUD showWithStatus:@"Fetching Teacher's Comments"];
     
-    NSMutableDictionary* dict1 = [[NSMutableDictionary alloc] init];
-    [dict1 setObject:@"Attendance" forKey:@"title"];
-    [dict1 setObject:@"attendance_tab.png" forKey:@"image"];
-    [commentsContentArr addObject:dict1];
+    DataSyncManager* manager = [[DataSyncManager alloc] init];
+    manager.serviceKey = kGetTeacherCommentsService;
+    manager.delegate = self;
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForGetCommentsService]];
+    
+}
+
+
+#pragma mark - DATASYNCMANAGER Delegates
+
+-(void) didFinishServiceWithSuccess:(GetTeacherCommentResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
+    
+    
+    if ([requestServiceKey isEqualToString:kGetTeacherCommentsService]) {
+        
+        [SVProgressHUD dismiss];
+        [SVProgressHUD showSuccessWithStatus:@"Comments Updated Successfully"];
+        commentsObj = responseData;
+        [self.commentsTableView reloadData];
+    }
+    
+    
+}
+
+
+-(void) didFinishServiceWithFailure:(NSString *)errorMsg {
+    
+    [SVProgressHUD dismiss];
+    
+    if (![errorMsg isEqualToString:@""]) {
+        [self showMessage:errorMsg withTitle:@"Newtwork Error"];
+    }
+    else {
+        [self showMessage:@"Request timed out, please try again later." withTitle:@"Newtwork Error"];
+    }
+    
+    return;
+    
+}
+
+
+
+#pragma mark - Modalobject
+
+- (NSMutableDictionary *) prepareDictionaryForGetCommentsService {
+    
+    GetTeacherCommentsRequestObject* obj = [[GetTeacherCommentsRequestObject alloc] init];
+    
+    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
+    NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
+    
+    obj.studentId = [[[dict valueForKey:GetStudentsInfoDetailsKey] objectAtIndex:0] valueForKey:StudentsIdKey];
+    
+    return [obj createRequestDictionary];
     
 }
 
@@ -57,7 +132,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return commentsContentArr.count;
+    return commentsObj.getTeachersCommentsDetails.count;
     
 }
 
@@ -72,7 +147,9 @@
         cell=[nib objectAtIndex:0];
     }
     
-    
+    cell.commentsDateLabel.text = [[[[commentsObj.getTeachersCommentsDetails objectAtIndex:indexPath.row] valueForKey:CommentTimeKey] componentsSeparatedByString:@" "] firstObject];
+    cell.commentsTimeLabel.text = [NSString stringWithFormat:@"%@ %@",[[[[commentsObj.getTeachersCommentsDetails objectAtIndex:indexPath.row] valueForKey:CommentTimeKey] componentsSeparatedByString:@" "] objectAtIndex:1], [[[[commentsObj.getTeachersCommentsDetails objectAtIndex:indexPath.row] valueForKey:CommentTimeKey] componentsSeparatedByString:@" "] lastObject]];
+    cell.commentsTxtView.text = [[commentsObj.getTeachersCommentsDetails objectAtIndex:indexPath.row] valueForKey:CommentsKey];
     
     return cell;
     
@@ -93,6 +170,26 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Show Alert
+
+-(void)showMessage:(NSString*)message withTitle:(NSString *)title
+{
+    
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle:title
+                                  message:message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        
+        //do something when click button
+    }];
+    [alert addAction:okAction];
+    UIViewController *vc = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    [vc presentViewController:alert animated:YES completion:nil];
 }
 
 /*

@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ContactUsViewController : UIViewController
+@interface ContactUsViewController : UIViewController <DataSyncManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
+
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
 @end

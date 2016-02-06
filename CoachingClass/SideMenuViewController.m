@@ -113,6 +113,10 @@
             [self performSegueWithIdentifier:@"showContactUsSegue" sender:nil];
             break;
             
+        case 4:
+            [self performSegueWithIdentifier:@"showFreebiesSegue" sender:nil];
+            break;
+            
             
         default:
             break;

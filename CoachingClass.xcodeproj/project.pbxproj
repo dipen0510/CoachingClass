@@ -45,6 +45,10 @@
 		D40D93421C52582F001C8ECC /* ScoresListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40D933D1C52582F001C8ECC /* ScoresListTableViewCell.xib */; };
 		D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93461C525E39001C8ECC /* SideMenuTableViewCell.m */; };
 		D40D93491C525E39001C8ECC /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40D93471C525E39001C8ECC /* SideMenuTableViewCell.xib */; };
+		D44AD3CD1C65CA79000E33BF /* GetTeacherCommentsRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3CC1C65CA79000E33BF /* GetTeacherCommentsRequestObject.m */; };
+		D44AD3D11C65CAAD000E33BF /* GetTeacherCommentResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D01C65CAAD000E33BF /* GetTeacherCommentResponseObject.m */; };
+		D44AD3D41C66710F000E33BF /* FreebiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D31C66710F000E33BF /* FreebiesViewController.m */; };
+		D44AD3D71C667385000E33BF /* GetContactUsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */; };
 		D4D8AED31C50DCD300FF883A /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */; };
 		D4D8AED41C50DCD300FF883A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECA1C50DCD300FF883A /* DBManager.m */; };
 		D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECF1C50DCD300FF883A /* SharedClass.m */; };
@@ -222,6 +226,14 @@
 		D40D93451C525E39001C8ECC /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewCell.h; sourceTree = "<group>"; };
 		D40D93461C525E39001C8ECC /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewCell.m; sourceTree = "<group>"; };
 		D40D93471C525E39001C8ECC /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		D44AD3CB1C65CA79000E33BF /* GetTeacherCommentsRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetTeacherCommentsRequestObject.h; sourceTree = "<group>"; };
+		D44AD3CC1C65CA79000E33BF /* GetTeacherCommentsRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTeacherCommentsRequestObject.m; sourceTree = "<group>"; };
+		D44AD3CF1C65CAAD000E33BF /* GetTeacherCommentResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetTeacherCommentResponseObject.h; sourceTree = "<group>"; };
+		D44AD3D01C65CAAD000E33BF /* GetTeacherCommentResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetTeacherCommentResponseObject.m; sourceTree = "<group>"; };
+		D44AD3D21C66710F000E33BF /* FreebiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreebiesViewController.h; sourceTree = "<group>"; };
+		D44AD3D31C66710F000E33BF /* FreebiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreebiesViewController.m; sourceTree = "<group>"; };
+		D44AD3D51C667385000E33BF /* GetContactUsResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetContactUsResponseObject.h; sourceTree = "<group>"; };
+		D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetContactUsResponseObject.m; sourceTree = "<group>"; };
 		D4D8AEC61C50DCD300FF883A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D4D8AEC71C50DCD300FF883A /* DataSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSyncManager.h; sourceTree = "<group>"; };
 		D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
@@ -374,6 +386,8 @@
 				186BAED21C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m */,
 				1886669B1C6142AC00492007 /* GetAttendanceRequestObject.h */,
 				1886669C1C6142AC00492007 /* GetAttendanceRequestObject.m */,
+				D44AD3CB1C65CA79000E33BF /* GetTeacherCommentsRequestObject.h */,
+				D44AD3CC1C65CA79000E33BF /* GetTeacherCommentsRequestObject.m */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -385,6 +399,10 @@
 				186BAEDC1C5E884F00F3C00D /* SubmitStudentDetailsResponseObject.m */,
 				1886669E1C61433400492007 /* GetAttendanceResponseObject.h */,
 				1886669F1C61433400492007 /* GetAttendanceResponseObject.m */,
+				D44AD3CF1C65CAAD000E33BF /* GetTeacherCommentResponseObject.h */,
+				D44AD3D01C65CAAD000E33BF /* GetTeacherCommentResponseObject.m */,
+				D44AD3D51C667385000E33BF /* GetContactUsResponseObject.h */,
+				D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -444,6 +462,8 @@
 				189104871C5AB4FA00E8D970 /* ContactUsViewController.m */,
 				188666971C61403400492007 /* SplashViewController.h */,
 				188666981C61403400492007 /* SplashViewController.m */,
+				D44AD3D21C66710F000E33BF /* FreebiesViewController.h */,
+				D44AD3D31C66710F000E33BF /* FreebiesViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -876,6 +896,7 @@
 				D40D93261C524113001C8ECC /* HomeViewController.m in Sources */,
 				D40D93411C52582F001C8ECC /* ScoresListTableViewCell.m in Sources */,
 				189104721C5A9CA800E8D970 /* AttendanceViewController.m in Sources */,
+				D44AD3D11C65CAAD000E33BF /* GetTeacherCommentResponseObject.m in Sources */,
 				D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */,
 				D4D8AF2D1C50DF0600FF883A /* FMDatabaseQueue.m in Sources */,
 				186BAEB61C5CB04D00F3C00D /* GraphBaseViewController.m in Sources */,
@@ -887,10 +908,13 @@
 				186BAEBB1C5CB3CE00F3C00D /* BalloonMarker.swift in Sources */,
 				D4D8AF0F1C50DCEB00FF883A /* AFURLResponseSerialization.m in Sources */,
 				D4D8AF2E1C50DF0600FF883A /* FMResultSet.m in Sources */,
+				D44AD3D71C667385000E33BF /* GetContactUsResponseObject.m in Sources */,
 				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
 				188666A01C61433400492007 /* GetAttendanceResponseObject.m in Sources */,
 				D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */,
 				D4D8AF2B1C50DF0600FF883A /* FMDatabaseAdditions.m in Sources */,
+				D44AD3CD1C65CA79000E33BF /* GetTeacherCommentsRequestObject.m in Sources */,
+				D44AD3D41C66710F000E33BF /* FreebiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

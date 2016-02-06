@@ -26,9 +26,24 @@
     
     [self customSetup];
     
-    NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:[[SharedClass sharedInstance] loadDataForService:kGetAttendanceService]];
-    attendanceObj = [[GetAttendanceResponseObject alloc] initWithDictionary:dict];
-    [self setupUIValues];
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAttendanceService];
+    if (attendStr) {
+        NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+        attendanceObj = [[GetAttendanceResponseObject alloc] initWithDictionary:dict];
+        [self setupUIValues];
+    }
+    else {
+        self.lastOneMonthDaysAttendedLabel.text = [NSString stringWithFormat:@"%d",0];
+        self.lastOneMonthTotalDaysLabel.text = [NSString stringWithFormat:@"%d",0];
+        
+        self.lastOneWeekDaysAttendedLabel.text = [NSString stringWithFormat:@"%d",0];
+        self.lastOneWeekTotalDaysLabel.text = [NSString stringWithFormat:@"%d",0];
+        
+        self.FromStartDaysAttendedLabel.text = [NSString stringWithFormat:@"%d",0];
+        self.FromStartTotalDaysLabel.text = [NSString stringWithFormat:@"%d",0];
+    }
+    
+    
     
 }
 
@@ -121,7 +136,6 @@
 
 - (NSMutableDictionary *) prepareDictionaryForGetAttendanceService {
     
-    NSError *e;
     GetAttendanceRequestObject* obj = [[GetAttendanceRequestObject alloc] init];
     
     NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];

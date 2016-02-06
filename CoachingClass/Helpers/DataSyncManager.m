@@ -9,6 +9,8 @@
 #import "DataSyncManager.h"
 #import "SubmitStudentDetailsResponseObject.h"
 #import "GetAttendanceResponseObject.h"
+#import "GetTeacherCommentResponseObject.h"
+#import "GetContactUsResponseObject.h"
 
 @implementation DataSyncManager
 @synthesize delegate,serviceKey;
@@ -21,7 +23,7 @@
     url = [NSURL URLWithString:BaseWebServiceURL];
 
     
-    NSLog(@"Service URl::%@/%@",url,self.serviceKey);
+    //NSLog(@"Service URl::%@/%@",url,self.serviceKey);
     //NSError *theError = nil;
     
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
@@ -119,6 +121,24 @@
         [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
         
         GetAttendanceResponseObject* response = [[GetAttendanceResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetTeacherCommentsService] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetTeacherCommentResponseObject* response = [[GetTeacherCommentResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetContactusService] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetContactUsResponseObject* response = [[GetContactUsResponseObject alloc] initWithDictionary:responseObj];
         
         return response;
         
