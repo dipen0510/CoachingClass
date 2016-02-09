@@ -44,6 +44,22 @@
 #define PhoneKey @"Phone"
 #define WebsiteKey @"Website"
 
+
+//AllSubjectWiseScores
+#define ListOfAllSubjectsKey @"ListOfAllSubjects"
+#define ListOfAllTestKey @"ListOfAllTest"
+#define ObtainedMarksKey @"ObtainedMarks"
+#define TestIDKey @"TestID"
+#define TestTitleKey @"TestTitle"
+#define TotalMarksKey @"TotalMarks"
+#define SubjectIdKey @"SubjectId"
+#define SubjectNameKey @"SubjectName"
+
+
+//AllTestWiseScores
+#define AllTestDataKey @"AllTestData"
+#define SubjectDetailsOfTestKey @"SubjectDetailsOfTest"
+
 #define statusKey @"Status"
 
 #endif

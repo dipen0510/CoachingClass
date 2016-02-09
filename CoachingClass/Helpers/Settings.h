@@ -13,10 +13,12 @@
 #define BaseWebServiceURL @"http://admin.mvsquares.com/CoachingClasses"
 
 #define kSubmitStudentService @"SubmitStudentDetails"
-#define kGetAllTestService @"GetStudentAllTest"
 #define kGetTeacherCommentsService @"GetTeachersCommentsDetails"
 #define kGetAttendanceService @"GetStudentAttendanceDetails"
 #define kGetContactusService @"GetContactUsDetails"
+#define kGetAllSubjectWiseScore @"GetSubjectwiseAllTest"
+#define kGetAllTestWiseScore @"GetStudentsSubjectsOfTest"
+
 
 #endif
 

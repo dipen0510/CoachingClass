@@ -1,21 +1,21 @@
 //
-//  SubjectGraphViewController.m
+//  TestGraphViewController.m
 //  CoachingClass
 //
-//  Created by Dipen Sekhsaria on 30/01/16.
+//  Created by Dipen Sekhsaria on 10/02/16.
 //  Copyright © 2016 Star Deep. All rights reserved.
 //
 
-#import "SubjectGraphViewController.h"
+#import "TestGraphViewController.h"
 #import "CoachingClass-Swift.h"
 
-@interface SubjectGraphViewController () <ChartViewDelegate>
+@interface TestGraphViewController () <ChartViewDelegate>
 
 @end
 
-@implementation SubjectGraphViewController
+@implementation TestGraphViewController
 
-@synthesize subjectObj;
+@synthesize testObj;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,36 +44,36 @@
     leftAxis.labelCount = 8;
     leftAxis.valueFormatter = [[NSNumberFormatter alloc] init];
     leftAxis.valueFormatter.maximumFractionDigits = 1;
-//    leftAxis.valueFormatter.negativeSuffix = @" $";
-//    leftAxis.valueFormatter.positiveSuffix = @" $";
+    //    leftAxis.valueFormatter.negativeSuffix = @" $";
+    //    leftAxis.valueFormatter.positiveSuffix = @" $";
     leftAxis.labelPosition = YAxisLabelPositionOutsideChart;
     leftAxis.spaceTop = 0.15;
     leftAxis.labelTextColor = [UIColor whiteColor];
     
     ChartYAxis *rightAxis = _chartView.rightAxis;
     rightAxis.enabled = NO;
-//    rightAxis.drawGridLinesEnabled = NO;
-//    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
-//    rightAxis.labelCount = 8;
-//    rightAxis.valueFormatter = leftAxis.valueFormatter;
-//    rightAxis.spaceTop = 0.15;
+    //    rightAxis.drawGridLinesEnabled = NO;
+    //    rightAxis.labelFont = [UIFont systemFontOfSize:10.f];
+    //    rightAxis.labelCount = 8;
+    //    rightAxis.valueFormatter = leftAxis.valueFormatter;
+    //    rightAxis.spaceTop = 0.15;
     
-//    _chartView.legend.position = ChartLegendPositionBelowChartLeft;
-//    _chartView.legend.form = ChartLegendFormSquare;
-//    _chartView.legend.formSize = 9.0;
-//    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
-//    _chartView.legend.xEntrySpace = 4.0;
+    //    _chartView.legend.position = ChartLegendPositionBelowChartLeft;
+    //    _chartView.legend.form = ChartLegendFormSquare;
+    //    _chartView.legend.formSize = 9.0;
+    //    _chartView.legend.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:11.f];
+    //    _chartView.legend.xEntrySpace = 4.0;
     _chartView.legend.enabled = NO;
     
     
-
-    [self setDataCount:(int)subjectObj.listOfAllTest.count range:[self findMaxTotalMarks]];
+    
+    [self setDataCount:(int)testObj.subjectDetailsOfTest.count range:[testObj.totalMarks intValue]];
     
     _chartView.clipsToBounds = YES;
     _chartView.backgroundColor = [UIColor colorWithRed:251./255. green:148./255. blue:0 alpha:1.0];
     _chartView.layer.cornerRadius = 10.0;
     
-    self.commentsTxtView.text = subjectObj.comments;
+    //self.commentsTxtView.text = subjectObj.comments;
     
 }
 
@@ -84,14 +84,14 @@
     
     for (int i = 0; i < count; i++)
     {
-        [xVals addObject:[[subjectObj.listOfAllTest objectAtIndex:i] valueForKey:TestTitleKey]];
+        [xVals addObject:[[testObj.subjectDetailsOfTest objectAtIndex:i] valueForKey:SubjectNameKey]];
     }
     
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < count; i++)
     {
-        double val = [[[subjectObj.listOfAllTest objectAtIndex:i] valueForKey:ObtainedMarksKey] doubleValue];
+        double val = [[[testObj.subjectDetailsOfTest objectAtIndex:i] valueForKey:ObtainedMarksKey] doubleValue];
         [yVals addObject:[[BarChartDataEntry alloc] initWithValue:val xIndex:i]];
     }
     
@@ -129,36 +129,20 @@
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-- (int) findMaxTotalMarks {
-    
-    NSMutableArray* arr = [subjectObj.listOfAllTest valueForKey:TotalMarksKey];
-    int max = 0;
-    
-    for (int i = 0; i < arr.count; i++) {
-        
-        if ([[arr objectAtIndex:i] intValue] > max) {
-            max = [[arr objectAtIndex:i] intValue];
-        }
-        
-    }
-    
-    return max;
-    
-}
 
 - (IBAction)backButtonTapped:(id)sender {
     
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
 @end

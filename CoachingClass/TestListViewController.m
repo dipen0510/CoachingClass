@@ -1,26 +1,26 @@
 //
-//  SubjectScoresListViewController.m
+//  TestListViewController.m
 //  CoachingClass
 //
-//  Created by Dipen Sekhsaria on 22/01/16.
+//  Created by Dipen Sekhsaria on 10/02/16.
 //  Copyright © 2016 Star Deep. All rights reserved.
 //
 
-#import "SubjectListViewController.h"
+#import "TestListViewController.h"
 #import "ScoresListTableViewCell.h"
-#import "GetAllSubjectWiseResponseObject.h"
-#import "GetAllSubjectWiseScoreRequestObject.h"
-#import "SubjectGraphViewController.h"
+#import "GetAllTestWiseRequestObject.h"
+#import "GetAllTestWiseResponseObject.h"
+#import "TestGraphViewController.h"
 
-@interface SubjectListViewController () {
+@interface TestListViewController () {
     
-    GetAllSubjectWiseResponseObject* allSubjectObj;
+    GetAllTestWiseResponseObject* allTestObj;
     
 }
 
 @end
 
-@implementation SubjectListViewController
+@implementation TestListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,10 +28,10 @@
     
     self.listTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllSubjectWiseScore];
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllTestWiseScore];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
-        allSubjectObj = [[GetAllSubjectWiseResponseObject alloc] initWithDictionary:dict];
+        allTestObj = [[GetAllTestWiseResponseObject alloc] initWithDictionary:dict];
     }
     
     
@@ -41,35 +41,35 @@
     
     [super viewDidAppear:animated];
     
-    [self startGetAllSubjectWiserService];
+    [self startGetAllTestWiseService];
     
 }
 
 
 #pragma mark - API Handling
 
-- (void) startGetAllSubjectWiserService {
+- (void) startGetAllTestWiseService {
     
-    [SVProgressHUD showWithStatus:@"Fetching All Subject Scores"];
+    [SVProgressHUD showWithStatus:@"Fetching All Test Scores"];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kGetAllSubjectWiseScore;
+    manager.serviceKey = kGetAllTestWiseScore;
     manager.delegate = self;
-    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForGetAllSubjectWiseScore]];
+    [manager startPOSTWebServicesWithParams:[self prepareDictionaryForGetAllTestWiseScore]];
     
 }
 
 
 #pragma mark - DATASYNCMANAGER Delegates
 
--(void) didFinishServiceWithSuccess:(GetAllSubjectWiseResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
+-(void) didFinishServiceWithSuccess:(GetAllTestWiseResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
     
     
-    if ([requestServiceKey isEqualToString:kGetAllSubjectWiseScore]) {
+    if ([requestServiceKey isEqualToString:kGetAllTestWiseScore]) {
         
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Scores Updated Successfully"];
-        allSubjectObj = responseData;
+        allTestObj = responseData;
         [self.listTblView reloadData];
         
     }
@@ -97,9 +97,9 @@
 
 #pragma mark - Modalobject
 
-- (NSMutableDictionary *) prepareDictionaryForGetAllSubjectWiseScore {
+- (NSMutableDictionary *) prepareDictionaryForGetAllTestWiseScore {
     
-    GetAllSubjectWiseScoreRequestObject* obj = [[GetAllSubjectWiseScoreRequestObject alloc] init];
+    GetAllTestWiseRequestObject* obj = [[GetAllTestWiseRequestObject alloc] init];
     
     NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
     NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
@@ -145,7 +145,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return allSubjectObj.listOfAllSubjects.count;
+    return allTestObj.allTestData.count;
     
 }
 
@@ -162,7 +162,7 @@
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.imgView.image = [self getImageForIndex:indexPath.row];
-    cell.title.text = [[allSubjectObj.listOfAllSubjects objectAtIndex:indexPath.row] valueForKey:SubjectNameKey];
+    cell.title.text = [[allTestObj.allTestData objectAtIndex:indexPath.row] valueForKey:TestTitleKey];
     
     return cell;
     
@@ -179,7 +179,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:true];
     
     selectedIndex = indexPath.row;
-    [self performSegueWithIdentifier:@"showSubjectGraphSegue" sender:nil];
+    [self performSegueWithIdentifier:@"showTestGraphSegue" sender:nil];
     
     
 }
@@ -218,14 +218,13 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([[segue identifier] isEqualToString:@"showSubjectGraphSegue"]) {
+    if ([[segue identifier] isEqualToString:@"showTestGraphSegue"]) {
         
-        SubjectGraphViewController* controller = (SubjectGraphViewController *)[segue destinationViewController];
-        controller.subjectObj = [[SingleSubjectObject alloc] initWithDictionary:[allSubjectObj.listOfAllSubjects objectAtIndex:selectedIndex]];
+        TestGraphViewController* controller = (TestGraphViewController *)[segue destinationViewController];
+        controller.testObj = [[SingleTestObject alloc] initWithDictionary:[allTestObj.allTestData objectAtIndex:selectedIndex]];
         
     }
     
 }
-
 
 @end

@@ -48,13 +48,13 @@
 
 - (IBAction)testWiseScoresButtonTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"showSubjectScoresSegue" sender:nil];
+    [self performSegueWithIdentifier:@"showTestListSegue" sender:nil];
     
 }
 
 - (IBAction)alltestPerformanceButtonTapped:(id)sender {
     
-    [self performSegueWithIdentifier:@"showSubjectScoresSegue" sender:nil];
+    //[self performSegueWithIdentifier:@"showSubjectScoresSegue" sender:nil];
     
 }
 

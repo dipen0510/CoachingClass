@@ -1,24 +1,20 @@
 //
-//  SubjectGraphViewController.h
+//  TestGraphViewController.h
 //  CoachingClass
 //
-//  Created by Dipen Sekhsaria on 30/01/16.
+//  Created by Dipen Sekhsaria on 10/02/16.
 //  Copyright © 2016 Star Deep. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "GraphBaseViewController.h"
 #import <Charts/Charts.h>
-#import "SingleSubjectObject.h"
+#import "SingleTestObject.h"
 
-@interface SubjectGraphViewController : GraphBaseViewController {
-    
-    
-    
-}
+@interface TestGraphViewController : GraphBaseViewController
 
 @property (weak, nonatomic) IBOutlet BarChartView *chartView;
-@property (strong, nonatomic) SingleSubjectObject* subjectObj;
+@property (strong, nonatomic) SingleTestObject* testObj;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTxtView;
 
 - (IBAction)backButtonTapped:(id)sender;

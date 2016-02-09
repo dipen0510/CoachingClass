@@ -11,6 +11,8 @@
 #import "GetAttendanceResponseObject.h"
 #import "GetTeacherCommentResponseObject.h"
 #import "GetContactUsResponseObject.h"
+#import "GetAllSubjectWiseResponseObject.h"
+#import "GetAllTestWiseResponseObject.h"
 
 @implementation DataSyncManager
 @synthesize delegate,serviceKey;
@@ -139,6 +141,24 @@
         [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
         
         GetContactUsResponseObject* response = [[GetContactUsResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetAllSubjectWiseScore] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetAllSubjectWiseResponseObject* response = [[GetAllSubjectWiseResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetAllTestWiseScore] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetAllTestWiseResponseObject* response = [[GetAllTestWiseResponseObject alloc] initWithDictionary:responseObj];
         
         return response;
         
