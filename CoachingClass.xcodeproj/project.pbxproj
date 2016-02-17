@@ -56,6 +56,7 @@
 		D44AD3D11C65CAAD000E33BF /* GetTeacherCommentResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D01C65CAAD000E33BF /* GetTeacherCommentResponseObject.m */; };
 		D44AD3D41C66710F000E33BF /* FreebiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D31C66710F000E33BF /* FreebiesViewController.m */; };
 		D44AD3D71C667385000E33BF /* GetContactUsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */; };
+		D471791F1C7436BA0009578D /* AllTestGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D471791E1C7436BA0009578D /* AllTestGraphViewController.m */; };
 		D4D8AED31C50DCD300FF883A /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */; };
 		D4D8AED41C50DCD300FF883A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECA1C50DCD300FF883A /* DBManager.m */; };
 		D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECF1C50DCD300FF883A /* SharedClass.m */; };
@@ -254,6 +255,8 @@
 		D44AD3D31C66710F000E33BF /* FreebiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FreebiesViewController.m; sourceTree = "<group>"; };
 		D44AD3D51C667385000E33BF /* GetContactUsResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetContactUsResponseObject.h; sourceTree = "<group>"; };
 		D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetContactUsResponseObject.m; sourceTree = "<group>"; };
+		D471791D1C7436BA0009578D /* AllTestGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllTestGraphViewController.h; sourceTree = "<group>"; };
+		D471791E1C7436BA0009578D /* AllTestGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllTestGraphViewController.m; sourceTree = "<group>"; };
 		D4D8AEC61C50DCD300FF883A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D4D8AEC71C50DCD300FF883A /* DataSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSyncManager.h; sourceTree = "<group>"; };
 		D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
@@ -496,6 +499,8 @@
 				D43374671C6A763900D8EC49 /* TestListViewController.m */,
 				D43374721C6A7A7600D8EC49 /* TestGraphViewController.h */,
 				D43374731C6A7A7600D8EC49 /* TestGraphViewController.m */,
+				D471791D1C7436BA0009578D /* AllTestGraphViewController.h */,
+				D471791E1C7436BA0009578D /* AllTestGraphViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -925,6 +930,7 @@
 				D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */,
 				D4D8AF2D1C50DF0600FF883A /* FMDatabaseQueue.m in Sources */,
 				D43374681C6A763900D8EC49 /* TestListViewController.m in Sources */,
+				D471791F1C7436BA0009578D /* AllTestGraphViewController.m in Sources */,
 				186BAEB61C5CB04D00F3C00D /* GraphBaseViewController.m in Sources */,
 				D4D8AF0E1C50DCEB00FF883A /* AFURLRequestSerialization.m in Sources */,
 				186BAEBC1C5CB3CE00F3C00D /* MyCustomXValueFormatter.m in Sources */,

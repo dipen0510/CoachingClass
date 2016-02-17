@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <DataSyncManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *revealButtonItem;
 
