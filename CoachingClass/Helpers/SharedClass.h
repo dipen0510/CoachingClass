@@ -16,5 +16,9 @@
 - (NSString*)loadDataForService:(NSString *)service;
 - (void)removeServiceData:(NSString *)service;
 
+- (void) saveProfileImage:(UIImage *)image forStudentId:(NSString *)studentId;
+- (UIImage *) loadProfileImageForStudentId:(NSString *)studentId;
+
 - (NSMutableDictionary *) getDictionaryFromJSONString:(NSString *)jsonString;
+
 @end

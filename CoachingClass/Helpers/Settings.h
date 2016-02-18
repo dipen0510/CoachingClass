@@ -18,6 +18,7 @@
 #define kGetContactusService @"GetContactUsDetails"
 #define kGetAllSubjectWiseScore @"GetSubjectwiseAllTest"
 #define kGetAllTestWiseScore @"GetStudentsSubjectsOfTest"
+#define kGetBroadcastDetails @"GetBroadcastDetails"
 
 
 #endif

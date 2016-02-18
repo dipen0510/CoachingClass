@@ -60,6 +60,16 @@
 #define AllTestDataKey @"AllTestData"
 #define SubjectDetailsOfTestKey @"SubjectDetailsOfTest"
 
+
+//Broadcast Details
+#define BroadcastDateKey @"BroadcastDate"
+#define FromDateKey @"FromDate"
+#define HeadingKey @"Heading"
+#define SummaryKey @"Summary"
+#define TeacherNameKey @"TeacherName"
+#define ToDateKey @"ToDate"
+
+
 #define statusKey @"Status"
 
 #endif

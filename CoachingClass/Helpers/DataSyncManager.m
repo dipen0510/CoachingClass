@@ -13,6 +13,7 @@
 #import "GetContactUsResponseObject.h"
 #import "GetAllSubjectWiseResponseObject.h"
 #import "GetAllTestWiseResponseObject.h"
+#import "GetBroadcastDetailsResponseObject.h"
 
 @implementation DataSyncManager
 @synthesize delegate,serviceKey;
@@ -159,6 +160,15 @@
         [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
         
         GetAllTestWiseResponseObject* response = [[GetAllTestWiseResponseObject alloc] initWithDictionary:responseObj];
+        
+        return response;
+        
+    }
+    if ([responseServiceKey isEqualToString:kGetBroadcastDetails] ) {
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        
+        GetBroadcastDetailsResponseObject* response = [[GetBroadcastDetailsResponseObject alloc] initWithDictionary:responseObj];
         
         return response;
         

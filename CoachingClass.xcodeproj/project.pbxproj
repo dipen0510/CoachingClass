@@ -45,6 +45,14 @@
 		D40D93421C52582F001C8ECC /* ScoresListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40D933D1C52582F001C8ECC /* ScoresListTableViewCell.xib */; };
 		D40D93481C525E39001C8ECC /* SideMenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D40D93461C525E39001C8ECC /* SideMenuTableViewCell.m */; };
 		D40D93491C525E39001C8ECC /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D40D93471C525E39001C8ECC /* SideMenuTableViewCell.xib */; };
+		D4100EF61C7581E00091E927 /* GetBroadcastDetailsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100EF51C7581E00091E927 /* GetBroadcastDetailsResponseObject.m */; };
+		D4100EFA1C75881E0091E927 /* AnnouncementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100EF91C75881E0091E927 /* AnnouncementsViewController.m */; };
+		D4100F0B1C75DB000091E927 /* PECropRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100F001C75DB000091E927 /* PECropRectView.m */; };
+		D4100F0C1C75DB000091E927 /* PECropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100F021C75DB000091E927 /* PECropView.m */; };
+		D4100F0D1C75DB000091E927 /* PECropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100F041C75DB000091E927 /* PECropViewController.m */; };
+		D4100F0E1C75DB000091E927 /* PEResizeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100F061C75DB000091E927 /* PEResizeControl.m */; };
+		D4100F0F1C75DB000091E927 /* UIImage+PECrop.m in Sources */ = {isa = PBXBuildFile; fileRef = D4100F081C75DB000091E927 /* UIImage+PECrop.m */; };
+		D4100F101C75DB000091E927 /* PEPhotoCropEditor.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4100F0A1C75DB000091E927 /* PEPhotoCropEditor.bundle */; };
 		D43374621C6A677500D8EC49 /* GetAllSubjectWiseScoreRequestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D43374611C6A677500D8EC49 /* GetAllSubjectWiseScoreRequestObject.m */; };
 		D43374651C6A67A300D8EC49 /* GetAllSubjectWiseResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D43374641C6A67A300D8EC49 /* GetAllSubjectWiseResponseObject.m */; };
 		D43374681C6A763900D8EC49 /* TestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D43374671C6A763900D8EC49 /* TestListViewController.m */; };
@@ -233,6 +241,21 @@
 		D40D93451C525E39001C8ECC /* SideMenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuTableViewCell.h; sourceTree = "<group>"; };
 		D40D93461C525E39001C8ECC /* SideMenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideMenuTableViewCell.m; sourceTree = "<group>"; };
 		D40D93471C525E39001C8ECC /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		D4100EF41C7581E00091E927 /* GetBroadcastDetailsResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetBroadcastDetailsResponseObject.h; sourceTree = "<group>"; };
+		D4100EF51C7581E00091E927 /* GetBroadcastDetailsResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetBroadcastDetailsResponseObject.m; sourceTree = "<group>"; };
+		D4100EF81C75881E0091E927 /* AnnouncementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementsViewController.h; sourceTree = "<group>"; };
+		D4100EF91C75881E0091E927 /* AnnouncementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementsViewController.m; sourceTree = "<group>"; };
+		D4100EFF1C75DB000091E927 /* PECropRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropRectView.h; sourceTree = "<group>"; };
+		D4100F001C75DB000091E927 /* PECropRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropRectView.m; sourceTree = "<group>"; };
+		D4100F011C75DB000091E927 /* PECropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropView.h; sourceTree = "<group>"; };
+		D4100F021C75DB000091E927 /* PECropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropView.m; sourceTree = "<group>"; };
+		D4100F031C75DB000091E927 /* PECropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PECropViewController.h; sourceTree = "<group>"; };
+		D4100F041C75DB000091E927 /* PECropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PECropViewController.m; sourceTree = "<group>"; };
+		D4100F051C75DB000091E927 /* PEResizeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEResizeControl.h; sourceTree = "<group>"; };
+		D4100F061C75DB000091E927 /* PEResizeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEResizeControl.m; sourceTree = "<group>"; };
+		D4100F071C75DB000091E927 /* UIImage+PECrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PECrop.h"; sourceTree = "<group>"; };
+		D4100F081C75DB000091E927 /* UIImage+PECrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PECrop.m"; sourceTree = "<group>"; };
+		D4100F0A1C75DB000091E927 /* PEPhotoCropEditor.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PEPhotoCropEditor.bundle; sourceTree = "<group>"; };
 		D43374601C6A677500D8EC49 /* GetAllSubjectWiseScoreRequestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllSubjectWiseScoreRequestObject.h; sourceTree = "<group>"; };
 		D43374611C6A677500D8EC49 /* GetAllSubjectWiseScoreRequestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllSubjectWiseScoreRequestObject.m; sourceTree = "<group>"; };
 		D43374631C6A67A300D8EC49 /* GetAllSubjectWiseResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllSubjectWiseResponseObject.h; sourceTree = "<group>"; };
@@ -434,6 +457,8 @@
 				D43374641C6A67A300D8EC49 /* GetAllSubjectWiseResponseObject.m */,
 				D433746C1C6A771D00D8EC49 /* GetAllTestWiseResponseObject.h */,
 				D433746D1C6A771D00D8EC49 /* GetAllTestWiseResponseObject.m */,
+				D4100EF41C7581E00091E927 /* GetBroadcastDetailsResponseObject.h */,
+				D4100EF51C7581E00091E927 /* GetBroadcastDetailsResponseObject.m */,
 			);
 			name = Response;
 			sourceTree = "<group>";
@@ -501,6 +526,8 @@
 				D43374731C6A7A7600D8EC49 /* TestGraphViewController.m */,
 				D471791D1C7436BA0009578D /* AllTestGraphViewController.h */,
 				D471791E1C7436BA0009578D /* AllTestGraphViewController.m */,
+				D4100EF81C75881E0091E927 /* AnnouncementsViewController.h */,
+				D4100EF91C75881E0091E927 /* AnnouncementsViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -558,6 +585,40 @@
 			path = "Custom Controls";
 			sourceTree = "<group>";
 		};
+		D4100EFD1C75DB000091E927 /* PhotEdit_Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D4100EFE1C75DB000091E927 /* Lib */,
+				D4100F091C75DB000091E927 /* Resource */,
+			);
+			path = PhotEdit_Lib;
+			sourceTree = "<group>";
+		};
+		D4100EFE1C75DB000091E927 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				D4100EFF1C75DB000091E927 /* PECropRectView.h */,
+				D4100F001C75DB000091E927 /* PECropRectView.m */,
+				D4100F011C75DB000091E927 /* PECropView.h */,
+				D4100F021C75DB000091E927 /* PECropView.m */,
+				D4100F031C75DB000091E927 /* PECropViewController.h */,
+				D4100F041C75DB000091E927 /* PECropViewController.m */,
+				D4100F051C75DB000091E927 /* PEResizeControl.h */,
+				D4100F061C75DB000091E927 /* PEResizeControl.m */,
+				D4100F071C75DB000091E927 /* UIImage+PECrop.h */,
+				D4100F081C75DB000091E927 /* UIImage+PECrop.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		D4100F091C75DB000091E927 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D4100F0A1C75DB000091E927 /* PEPhotoCropEditor.bundle */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		D4D8AEC51C50DCD300FF883A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,6 +640,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D8AF2F1C50DF8A00FF883A /* libsqlite3.tbd */,
+				D4100EFD1C75DB000091E927 /* PhotEdit_Lib */,
 				D40D93201C523EDE001C8ECC /* SWRevealViewController */,
 				D4D8AF1E1C50DF0600FF883A /* fmdb */,
 				D4D8AED91C50DCEB00FF883A /* AFNetworking */,
@@ -857,6 +919,7 @@
 				1891047A1C5AA3B800E8D970 /* AttendanceTableSeparator.png in Resources */,
 				D4D8AF991C50E77500FF883A /* performance_tab.png in Resources */,
 				D4D8AF1A1C50DCEB00FF883A /* SVProgressHUD.bundle in Resources */,
+				D4100F101C75DB000091E927 /* PEPhotoCropEditor.bundle in Resources */,
 				D4D8AF7E1C50E77500FF883A /* class_icon_inner.png in Resources */,
 				D4D8AF6F1C50E77500FF883A /* AllTestTab.png in Resources */,
 				D40D93491C525E39001C8ECC /* SideMenuTableViewCell.xib in Resources */,
@@ -886,11 +949,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4100F0F1C75DB000091E927 /* UIImage+PECrop.m in Sources */,
 				D4D8AF101C50DCEB00FF883A /* AFURLSessionManager.m in Sources */,
 				D4D8AF191C50DCEB00FF883A /* SVIndefiniteAnimatedView.m in Sources */,
 				D4D8AF0D1C50DCEB00FF883A /* AFURLConnectionOperation.m in Sources */,
 				D4D8AF171C50DCEB00FF883A /* UIRefreshControl+AFNetworking.m in Sources */,
 				D4D8AF141C50DCEB00FF883A /* UIButton+AFNetworking.m in Sources */,
+				D4100F0D1C75DB000091E927 /* PECropViewController.m in Sources */,
+				D4100EF61C7581E00091E927 /* GetBroadcastDetailsResponseObject.m in Sources */,
 				D43374621C6A677500D8EC49 /* GetAllSubjectWiseScoreRequestObject.m in Sources */,
 				188666991C61403400492007 /* SplashViewController.m in Sources */,
 				186BAEEB1C5E884F00F3C00D /* SumbitStudentDetailsRequestObject.m in Sources */,
@@ -906,6 +972,7 @@
 				D4D8AF2A1C50DF0600FF883A /* FMDatabase.m in Sources */,
 				D4D8AF081C50DCEB00FF883A /* AFHTTPRequestOperation.m in Sources */,
 				18CF25471C3AF90F00F9F303 /* ViewController.m in Sources */,
+				D4100F0E1C75DB000091E927 /* PEResizeControl.m in Sources */,
 				1886669D1C6142AC00492007 /* GetAttendanceRequestObject.m in Sources */,
 				D433746E1C6A771D00D8EC49 /* GetAllTestWiseResponseObject.m in Sources */,
 				D4D8AF131C50DCEB00FF883A /* UIAlertView+AFNetworking.m in Sources */,
@@ -918,6 +985,7 @@
 				189104881C5AB4FA00E8D970 /* ContactUsViewController.m in Sources */,
 				D40D93341C52572D001C8ECC /* SubjectListViewController.m in Sources */,
 				D43374741C6A7A7600D8EC49 /* TestGraphViewController.m in Sources */,
+				D4100F0C1C75DB000091E927 /* PECropView.m in Sources */,
 				D4D8AF121C50DCEB00FF883A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D4D8AF111C50DCEB00FF883A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				18CF25411C3AF90F00F9F303 /* main.m in Sources */,
@@ -943,6 +1011,8 @@
 				D44AD3D71C667385000E33BF /* GetContactUsResponseObject.m in Sources */,
 				189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */,
 				188666A01C61433400492007 /* GetAttendanceResponseObject.m in Sources */,
+				D4100EFA1C75881E0091E927 /* AnnouncementsViewController.m in Sources */,
+				D4100F0B1C75DB000091E927 /* PECropRectView.m in Sources */,
 				D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */,
 				D4D8AF2B1C50DF0600FF883A /* FMDatabaseAdditions.m in Sources */,
 				D43374651C6A67A300D8EC49 /* GetAllSubjectWiseResponseObject.m in Sources */,
@@ -1113,7 +1183,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "191a0221-1537-4625-b6cf-716655b331b2";
+				PROVISIONING_PROFILE = "fae297cc-ac53-4116-a2d8-7cfe996bfef7";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1137,7 +1207,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "191a0221-1537-4625-b6cf-716655b331b2";
+				PROVISIONING_PROFILE = "fae297cc-ac53-4116-a2d8-7cfe996bfef7";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 			};
 			name = Release;

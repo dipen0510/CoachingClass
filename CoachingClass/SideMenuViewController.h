@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PECropViewController.h"
 
-@interface SideMenuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
+@interface SideMenuViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,PECropViewControllerDelegate> {
     
     NSMutableArray* tableArr;
+    UIActionSheet* actSheet;
+    UIImage* profileImage;
     
 }
 

@@ -116,6 +116,38 @@ static SharedClass *singletonObject = nil;
     
 }
 
+#pragma mark - Profile Image local storage
+
+- (void) saveProfileImage:(UIImage *)image forStudentId:(NSString *)studentId {
+    
+    if (image != nil)
+    {
+        NSString *documentsDirectory = [self getDocumentDirectoryPath];
+        NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                          [NSString stringWithFormat:@"%@.png",studentId]];
+        NSData* data = UIImagePNGRepresentation(image);
+        [data writeToFile:path atomically:YES];
+        
+    }
+    
+}
+
+- (UIImage *) loadProfileImageForStudentId:(NSString *)studentId {
+    
+    NSString *documentsDirectory = [self getDocumentDirectoryPath];
+    NSString* path = [documentsDirectory stringByAppendingPathComponent:
+                      [NSString stringWithFormat:@"%@.png",studentId]];
+    UIImage* image = [UIImage imageWithContentsOfFile:path];
+    
+    if (image) {
+        return image;
+    }
+    
+    return [UIImage imageNamed:@"Person.png"];
+    
+    
+}
+
 #pragma mark - Data Manipulator
 
 - (NSMutableDictionary *) getDictionaryFromJSONString:(NSString *)jsonString {
