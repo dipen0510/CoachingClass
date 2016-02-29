@@ -1183,7 +1183,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fae297cc-ac53-4116-a2d8-7cfe996bfef7";
+				PROVISIONING_PROFILE = "a157bcc4-ccaa-4258-bdf2-8ffb8c87e31f";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1207,7 +1207,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fae297cc-ac53-4116-a2d8-7cfe996bfef7";
+				PROVISIONING_PROFILE = "a157bcc4-ccaa-4258-bdf2-8ffb8c87e31f";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 			};
 			name = Release;

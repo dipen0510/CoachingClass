@@ -68,6 +68,40 @@
     self.submitButton.layer.borderWidth = 1.0;
     self.submitButton.layer.cornerRadius = self.submitButton.frame.size.height/2.;
     
+    
+    // make the textfield its own delegate
+    self.dateOfBirthTextField.delegate = self;
+    
+    // alloc/init your date picker, and (optional) set its initial date
+    datePicker = [[UIDatePicker alloc]init];
+    [datePicker setDate:[NSDate date]]; //this returns today's date
+    
+    // theMinimumDate (which signifies the oldest a person can be) and theMaximumDate (defines the youngest a person can be) are the dates you need to define according to your requirements, declare them:
+    
+    // the date string for the minimum age required (change according to your needs)
+    //NSString *maxDateString = @"01-Jan-1996";
+    // the date formatter used to convert string to date
+    //NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    // the specific format to use
+    //dateFormatter.dateFormat = @"dd-MMM-yyyy";
+    // converting string to date
+    //NSDate *theMaximumDate = [dateFormatter dateFromString: maxDateString];
+    
+    // repeat the same logic for theMinimumDate if needed
+    
+    // here you can assign the max and min dates to your datePicker
+    //[datePicker setMaximumDate:theMaximumDate]; //the min age restriction
+    //[datePicker setMinimumDate:theMinimumDate]; //the max age restriction (if needed, or else dont use this line)
+    
+    // set the mode
+    [datePicker setDatePickerMode:UIDatePickerModeDate];
+    
+    // update the textfield with the date everytime it changes with selector defined below
+    [datePicker addTarget:self action:@selector(updateTextField:) forControlEvents:UIControlEventValueChanged];
+    
+    // and finally set the datePicker as the input mode of your textfield
+    [self.dateOfBirthTextField setInputView:datePicker];
+    
 }
 
 
@@ -138,7 +172,9 @@
     [dict setObject:self.studentNameTextField.text forKey:StudentNameKey];
     [dict setObject:self.rollNumberTextField.text forKey:RollNoKey];
     [dict setObject:self.pinCodeTextField.text forKey:PinCodeKey];
-    [dict setObject:self.dateOfBirthTextField.text forKey:DOBKey];
+    
+    UIDatePicker *picker = (UIDatePicker*)self.dateOfBirthTextField.inputView;
+    [dict setObject:[self formatDateForUploading:picker.date] forKey:DOBKey];
     
     return dict;
     
@@ -235,6 +271,29 @@
     
 }
 
+
+#pragma mark - Date Picker Helpers
+
+-(void)updateTextField:(id)sender {
+    UIDatePicker *picker = (UIDatePicker*)self.dateOfBirthTextField.inputView;
+    self.dateOfBirthTextField.text = [self formatDate:picker.date];
+}
+
+- (NSString *)formatDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setDateFormat:@"dd-MMM-yyyy"];
+     NSString *formattedDate = [dateFormatter stringFromDate:date];
+     return formattedDate;
+}
+
+
+- (NSString *)formatDateForUploading:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [dateFormatter stringFromDate:date];
+    return formattedDate;
+}
 
 
 #pragma mark - Show Alert

@@ -10,9 +10,10 @@
 #import "SumbitStudentDetailsRequestObject.h"
 #import "SubmitStudentDetailsResponseObject.h"
 
-@interface ViewController : UIViewController <DataSyncManagerDelegate> {
+@interface ViewController : UIViewController <DataSyncManagerDelegate, UITextFieldDelegate> {
     
     NSMutableArray* studentArr;
+    UIDatePicker *datePicker;
     
 }
 
