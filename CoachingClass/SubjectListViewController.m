@@ -222,6 +222,7 @@
         
         SubjectGraphViewController* controller = (SubjectGraphViewController *)[segue destinationViewController];
         controller.subjectObj = [[SingleSubjectObject alloc] initWithDictionary:[allSubjectObj.listOfAllSubjects objectAtIndex:selectedIndex]];
+        controller.navTitleText = [[allSubjectObj.listOfAllSubjects objectAtIndex:selectedIndex] valueForKey:SubjectNameKey];
         
     }
     

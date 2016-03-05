@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet BarChartView *chartView;
 @property (strong, nonatomic) SingleSubjectObject* subjectObj;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTxtView;
+@property (weak, nonatomic) IBOutlet UILabel *navTitleLabel;
+@property (strong, nonatomic) NSString* navTitleText;
 
 - (IBAction)backButtonTapped:(id)sender;
 

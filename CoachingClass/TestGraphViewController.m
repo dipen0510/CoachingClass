@@ -15,7 +15,7 @@
 
 @implementation TestGraphViewController
 
-@synthesize testObj;
+@synthesize testObj,navTitleText;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -72,6 +72,8 @@
     _chartView.clipsToBounds = YES;
     _chartView.backgroundColor = [UIColor colorWithRed:251./255. green:148./255. blue:0 alpha:1.0];
     _chartView.layer.cornerRadius = 10.0;
+    
+    self.navTitleLabel.text = navTitleText;
     
     //self.commentsTxtView.text = subjectObj.comments;
     

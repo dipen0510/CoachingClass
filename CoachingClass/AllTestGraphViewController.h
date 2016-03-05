@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GraphBaseViewController.h"
 #import <Charts/Charts.h>
-#import "GetAllSubjectWiseResponseObject.h"
-#import "SingleSubjectObject.h"
+#import "GetAllTestWiseResponseObject.h"
+#import "SingleTestObject.h"
 
 @interface AllTestGraphViewController : GraphBaseViewController {
     
@@ -18,9 +18,10 @@
     
 }
 
-@property (weak, nonatomic) IBOutlet BarChartView *chartView;
+
+@property (weak, nonatomic) IBOutlet LineChartView *chartView;
 @property (weak, nonatomic) IBOutlet UITextView *commentsTxtView;
-@property (strong, nonatomic) GetAllSubjectWiseResponseObject* allSubjectObj;
+@property (strong, nonatomic) GetAllTestWiseResponseObject* allTestObj;
 
 - (IBAction)backButtonTapped:(id)sender;
 

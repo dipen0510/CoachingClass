@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x6b-Te-RaG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="x6b-Te-RaG">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -272,7 +272,7 @@
                         <outlet property="revealButtonItem" destination="0iu-t1-R1z" id="anu-3L-Bdb"/>
                         <segue destination="FFV-nI-ZIk" kind="show" identifier="showSubjectScoresSegue" id="80G-Dz-9Ky"/>
                         <segue destination="AaF-5j-sih" kind="show" identifier="showTestListSegue" id="rkQ-uu-G7N"/>
-                        <segue destination="nKu-kh-knR" kind="show" identifier="showAllSubjectGraphSegue" id="Nq5-HO-Pud"/>
+                        <segue destination="nwR-eM-D7e" kind="show" identifier="showAllSubjectGraphSegue" id="cgc-AK-fhC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaA-F2-32r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1150,6 +1150,7 @@
                     <connections>
                         <outlet property="chartView" destination="SKc-jk-9Ur" id="wmM-Fz-tki"/>
                         <outlet property="commentsTxtView" destination="KTd-LF-fVK" id="rGI-LB-h5c"/>
+                        <outlet property="navTitleLabel" destination="pTc-G3-DH1" id="LqU-CB-xSL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUy-Y9-o4l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1406,16 +1407,17 @@
                     </view>
                     <connections>
                         <outlet property="chartView" destination="Cfa-0G-W6a" id="bNl-kr-wqF"/>
+                        <outlet property="navTitleLabel" destination="0Pa-7e-fJ5" id="ZlD-2b-a5Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4OR-8n-Yh9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5075" y="372"/>
         </scene>
-        <!--All Test Graph View Controller-->
+        <!--View Controller-->
         <scene sceneID="kwd-og-cVj">
             <objects>
-                <viewController id="nKu-kh-knR" customClass="AllTestGraphViewController" sceneMemberID="viewController">
+                <viewController id="nKu-kh-knR" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tMn-ei-t7Y"/>
                         <viewControllerLayoutGuide type="bottom" id="bVa-Do-mYe"/>
@@ -1427,7 +1429,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8S-EX-Sel">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-oy-014">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jgs-oy-014">
                                         <rect key="frame" x="195" y="35" width="211" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="SxW-EE-5Hz"/>
@@ -1482,6 +1484,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q48-Qi-yx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5075" y="-1197"/>
+        </scene>
+        <!--All Test Graph View Controller-->
+        <scene sceneID="SWY-GN-Dl0">
+            <objects>
+                <viewController id="nwR-eM-D7e" customClass="AllTestGraphViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Spn-g3-Mi9"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJK-8n-0eS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LoF-pN-gXL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVM-3Z-IDc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JrG-ZU-naX">
+                                        <rect key="frame" x="195" y="35" width="211" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="JB8-mO-oR9"/>
+                                            <constraint firstAttribute="width" constant="211" id="kOH-fp-BNk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kc-1R-wf6">
+                                        <rect key="frame" x="8" y="39" width="50" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="Mof-2o-z1h"/>
+                                            <constraint firstAttribute="width" constant="50" id="NZq-A4-he7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="Back"/>
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="nwR-eM-D7e" eventType="touchUpInside" id="F9t-1d-SRJ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.1529411765" green="0.58431372550000005" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4kc-1R-wf6" secondAttribute="bottom" constant="8" id="3jZ-dg-IKJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="JrG-ZU-naX" secondAttribute="bottom" constant="8" id="OMF-b9-DOj"/>
+                                    <constraint firstAttribute="height" constant="64" id="TXo-FE-uH4"/>
+                                    <constraint firstItem="JrG-ZU-naX" firstAttribute="centerX" secondItem="YVM-3Z-IDc" secondAttribute="centerX" id="U2r-nH-mbW"/>
+                                    <constraint firstItem="4kc-1R-wf6" firstAttribute="leading" secondItem="YVM-3Z-IDc" secondAttribute="leading" constant="8" id="Wyo-jL-0Fy"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19h-sf-Uhf" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="19h-sf-Uhf" firstAttribute="trailing" secondItem="LoF-pN-gXL" secondAttribute="trailingMargin" id="0Tw-o9-RGH"/>
+                            <constraint firstItem="19h-sf-Uhf" firstAttribute="leading" secondItem="LoF-pN-gXL" secondAttribute="leadingMargin" id="4cz-ze-wWf"/>
+                            <constraint firstItem="yJK-8n-0eS" firstAttribute="top" secondItem="19h-sf-Uhf" secondAttribute="bottom" constant="8" id="MLf-bV-BQK"/>
+                            <constraint firstItem="19h-sf-Uhf" firstAttribute="top" secondItem="YVM-3Z-IDc" secondAttribute="bottom" constant="8" id="PJO-yi-7cf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YVM-3Z-IDc" secondAttribute="trailing" constant="-20" id="PaI-p0-758"/>
+                            <constraint firstItem="YVM-3Z-IDc" firstAttribute="leading" secondItem="LoF-pN-gXL" secondAttribute="leadingMargin" constant="-20" id="h2p-IM-bXl"/>
+                            <constraint firstItem="YVM-3Z-IDc" firstAttribute="top" secondItem="LoF-pN-gXL" secondAttribute="topMargin" id="ybX-a7-1BB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="19h-sf-Uhf" id="ZAx-k2-TQ0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ij-Y5-Vaw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5075" y="-1966"/>
         </scene>
     </scenes>
     <resources>

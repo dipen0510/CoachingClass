@@ -126,6 +126,8 @@
     
     if ([requestServiceKey isEqualToString:kSubmitStudentService]) {
         
+        [[SharedClass sharedInstance] setUsername:self.studentNameTextField.text];
+        
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Student Info Validated Successfully"];
         [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];

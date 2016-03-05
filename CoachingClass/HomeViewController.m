@@ -7,14 +7,14 @@
 //
 
 #import "HomeViewController.h"
-#import "GetAllSubjectWiseResponseObject.h"
-#import "GetAllSubjectWiseScoreRequestObject.h"
+#import "GetAllTestWiseRequestObject.h"
+#import "GetAllTestWiseResponseObject.h"
 #import "AllTestGraphViewController.h"
 
 
 @interface HomeViewController () {
     
-    GetAllSubjectWiseResponseObject* allSubjectObj;
+    GetAllTestWiseResponseObject* allTestObj;
     
 }
 
@@ -62,10 +62,10 @@
 
 - (IBAction)alltestPerformanceButtonTapped:(id)sender {
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllSubjectWiseScore];
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllTestWiseScore];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
-        allSubjectObj = [[GetAllSubjectWiseResponseObject alloc] initWithDictionary:dict];
+        allTestObj = [[GetAllTestWiseResponseObject alloc] initWithDictionary:dict];
         [self performSegueWithIdentifier:@"showAllSubjectGraphSegue" sender:nil];
     }
     else {
@@ -81,10 +81,10 @@
 
 - (void) startGetAllSubjectWiserService {
     
-    [SVProgressHUD showWithStatus:@"Fetching All Subject Scores"];
+    [SVProgressHUD showWithStatus:@"Fetching All Test Scores"];
     
     DataSyncManager* manager = [[DataSyncManager alloc] init];
-    manager.serviceKey = kGetAllSubjectWiseScore;
+    manager.serviceKey = kGetAllTestWiseScore;
     manager.delegate = self;
     [manager startPOSTWebServicesWithParams:[self prepareDictionaryForGetAllSubjectWiseScore]];
     
@@ -93,14 +93,14 @@
 
 #pragma mark - DATASYNCMANAGER Delegates
 
--(void) didFinishServiceWithSuccess:(GetAllSubjectWiseResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
+-(void) didFinishServiceWithSuccess:(GetAllTestWiseResponseObject *)responseData andServiceKey:(NSString *)requestServiceKey {
     
     
-    if ([requestServiceKey isEqualToString:kGetAllSubjectWiseScore]) {
+    if ([requestServiceKey isEqualToString:kGetAllTestWiseScore]) {
         
         [SVProgressHUD dismiss];
         [SVProgressHUD showSuccessWithStatus:@"Scores Updated Successfully"];
-        allSubjectObj = responseData;
+        allTestObj = responseData;
         [self performSegueWithIdentifier:@"showAllSubjectGraphSegue" sender:nil];
         
     }
@@ -130,7 +130,7 @@
 
 - (NSMutableDictionary *) prepareDictionaryForGetAllSubjectWiseScore {
     
-    GetAllSubjectWiseScoreRequestObject* obj = [[GetAllSubjectWiseScoreRequestObject alloc] init];
+    GetAllTestWiseRequestObject* obj = [[GetAllTestWiseRequestObject alloc] init];
     
     NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
     NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
@@ -184,7 +184,7 @@
      if ([[segue identifier] isEqualToString:@"showAllSubjectGraphSegue"]) {
          
          AllTestGraphViewController* controller = (AllTestGraphViewController *)[segue destinationViewController];
-         controller.allSubjectObj = allSubjectObj;
+         controller.allTestObj = allTestObj;
          
          
      }

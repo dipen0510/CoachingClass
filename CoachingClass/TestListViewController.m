@@ -222,6 +222,7 @@
         
         TestGraphViewController* controller = (TestGraphViewController *)[segue destinationViewController];
         controller.testObj = [[SingleTestObject alloc] initWithDictionary:[allTestObj.allTestData objectAtIndex:selectedIndex]];
+        controller.navTitleText = [[allTestObj.allTestData objectAtIndex:selectedIndex] valueForKey:TestTitleKey];
         
     }
     

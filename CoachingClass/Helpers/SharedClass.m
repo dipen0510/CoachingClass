@@ -10,6 +10,8 @@
 
 @implementation SharedClass
 
+@synthesize username;
+
 
 static SharedClass *singletonObject = nil;
 

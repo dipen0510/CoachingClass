@@ -12,6 +12,8 @@
 
 + sharedInstance;
 
+@property (strong, nonatomic) NSString* username;
+
 - (void)saveData: (NSString*)data ForService:(NSString *)service;
 - (NSString*)loadDataForService:(NSString *)service;
 - (void)removeServiceData:(NSString *)service;

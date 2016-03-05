@@ -14,7 +14,7 @@
 
 @implementation AllTestGraphViewController
 
-@synthesize allSubjectObj;
+@synthesize allTestObj;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,10 +25,6 @@
     
     _chartView.delegate = self;
     
-    _chartView.drawBarShadowEnabled = NO;
-    _chartView.drawValueAboveBarEnabled = YES;
-    
-    _chartView.maxVisibleValueCount = 60;
     
     BalloonMarker *marker = [[BalloonMarker alloc] initWithColor:[UIColor colorWithWhite:180/255. alpha:1.0] font:[UIFont systemFontOfSize:12.0] insets: UIEdgeInsetsMake(8.0, 8.0, 20.0, 8.0)];
     marker.minimumSize = CGSizeMake(80.f, 40.f);
@@ -70,7 +66,7 @@
     
     
     
-    [self setDataCount:(int)allSubjectObj.listOfAllSubjects.count range:[self findMaxTotalMarks]];
+    [self setDataCount:(int)allTestObj.allTestData.count range:[self findMaxTotalMarks]];
     
     _chartView.clipsToBounds = YES;
     _chartView.backgroundColor = [UIColor colorWithRed:251./255. green:148./255. blue:0 alpha:1.0];
@@ -85,7 +81,7 @@
     
     for (int i = 0; i < count; i++)
     {
-        [xVals addObject:[[allSubjectObj.listOfAllSubjects objectAtIndex:i] valueForKey:SubjectNameKey]];
+        [xVals addObject:[[allTestObj.allTestData objectAtIndex:i] valueForKey:TestTitleKey]];
     }
     
     NSMutableArray *yVals = [[NSMutableArray alloc] init];
@@ -93,59 +89,54 @@
     for (int i = 0; i < count; i++)
     {
         
-        SingleSubjectObject* subjectObj = [[SingleSubjectObject alloc] initWithDictionary:[allSubjectObj.listOfAllSubjects objectAtIndex:i]];
+        SingleTestObject* testObj = [[SingleTestObject alloc] initWithDictionary:[allTestObj.allTestData objectAtIndex:i]];
         
-        NSMutableArray* yTempArr = [[NSMutableArray alloc] init];
+        double total = 0.0;
         
-        for (int j = 0; j < subjectObj.listOfAllTest.count ; j++) {
-
-            double val = [[[subjectObj.listOfAllTest objectAtIndex:j] valueForKey:ObtainedMarksKey] doubleValue];
-            [yTempArr addObject:[[BarChartDataEntry alloc] initWithValue:val xIndex:i]];
+        for (int j = 0; j < testObj.subjectDetailsOfTest.count ; j++) {
+            
+            double val = [[[testObj.subjectDetailsOfTest objectAtIndex:j] valueForKey:ObtainedMarksKey] doubleValue];
+            total = total + val;
             
         }
         
-        [yVals addObject:yTempArr];
+        double totalPercent = (total * 100) / ([testObj.totalMarks floatValue] * testObj.subjectDetailsOfTest.count);
+        
+        [yVals addObject:[[ChartDataEntry alloc] initWithValue:totalPercent xIndex:i]];
     }
     
-    int counter = 0;
-    int maxCounter = [self findMaxNumberOfTests:yVals];
+    
+    LineChartDataSet *set1 = [[LineChartDataSet alloc] initWithYVals:yVals label:@"DataSet 1"];
+    
+    //set1.lineDashLengths = @[@5.f, @2.5f];
+    //set1.highlightLineDashLengths = @[@5.f, @2.5f];
+    [set1 setColor:UIColor.blackColor];
+    [set1 setCircleColor:UIColor.blackColor];
+    set1.lineWidth = 1.0;
+    set1.circleRadius = 3.0;
+    set1.drawCircleHoleEnabled = NO;
+    set1.valueFont = [UIFont systemFontOfSize:9.f];
+    
+    NSArray *gradientColors = @[
+                                (id)[UIColor colorWithWhite:1.0 alpha:0.7].CGColor,
+                                (id)[UIColor colorWithWhite:1.0 alpha:0.1].CGColor
+                                ];
+    CGGradientRef gradient = CGGradientCreateWithColors(nil, (CFArrayRef)gradientColors, nil);
+    
+    set1.fillAlpha = 1.f;
+    set1.fill = [ChartFill fillWithLinearGradient:gradient angle:90.f];
+    set1.drawFilledEnabled = YES;
     
     NSMutableArray *dataSets = [[NSMutableArray alloc] init];
+    [dataSets addObject:set1];
     
-    while (counter < maxCounter) {
-        
-        NSMutableArray* finalArr = [[NSMutableArray alloc] init];
-        NSString* str;
-        
-         for (int i = 0; i < yVals.count; i++) {
-             
-             NSMutableArray* tmpArr = [[NSMutableArray alloc] init];
-             tmpArr = (NSMutableArray *)[yVals objectAtIndex:i];
-             
-             if (counter < tmpArr.count) {
-                 [finalArr addObject:[tmpArr objectAtIndex:counter]];
-                 SingleSubjectObject* subjectObj = [[SingleSubjectObject alloc] initWithDictionary:[allSubjectObj.listOfAllSubjects objectAtIndex:i]];
-                 str = [[subjectObj.listOfAllTest objectAtIndex:counter] valueForKey:TestTitleKey];
-             }
-             
-         }
-        
-        
-        BarChartDataSet *set = [[BarChartDataSet alloc] initWithYVals:finalArr label:str];
-        [dataSets addObject:set];
-        
-        counter++;
-        
-    }
-    
-    BarChartData *data = [[BarChartData alloc] initWithXVals:xVals dataSets:dataSets];
-    data.groupSpace = 10;
-    [data setValueFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:10.f]];
+    LineChartData *data = [[LineChartData alloc] initWithXVals:xVals dataSets:dataSets];
     
     _chartView.data = data;
     
-    [_chartView animateWithYAxisDuration:1.4 easingOption:ChartEasingOptionEaseInOutQuart];
+    [_chartView animateWithXAxisDuration:2.5 easingOption:ChartEasingOptionEaseInOutQuart];
 }
+
 
 
 #pragma mark - ChartViewDelegate
@@ -181,19 +172,12 @@
     
     int max = 0;
     
-    for (int j = 0; j < allSubjectObj.listOfAllSubjects.count; j++) {
+    for (int j = 0; j < allTestObj.allTestData.count; j++) {
         
-       SingleSubjectObject* subjectObj = [[SingleSubjectObject alloc] initWithDictionary:[allSubjectObj.listOfAllSubjects objectAtIndex:j]];
+        SingleTestObject* testObj = [[SingleTestObject alloc] initWithDictionary:[allTestObj.allTestData objectAtIndex:j]];
         
-        NSMutableArray* arr = [subjectObj.listOfAllTest valueForKey:TotalMarksKey];
-        
-        
-        for (int i = 0; i < arr.count; i++) {
-            
-            if ([[arr objectAtIndex:i] intValue] > max) {
-                max = [[arr objectAtIndex:i] intValue];
-            }
-            
+        if ([testObj.totalMarks intValue] > max) {
+                max = [testObj.totalMarks intValue];
         }
         
     }

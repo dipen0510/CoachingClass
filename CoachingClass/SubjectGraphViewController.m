@@ -15,7 +15,7 @@
 
 @implementation SubjectGraphViewController
 
-@synthesize subjectObj;
+@synthesize subjectObj,navTitleText;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -74,6 +74,7 @@
     _chartView.layer.cornerRadius = 10.0;
     
     self.commentsTxtView.text = subjectObj.comments;
+    self.navTitleLabel.text = navTitleText;
     
 }
 

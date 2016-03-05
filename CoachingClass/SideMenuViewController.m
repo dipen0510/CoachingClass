@@ -45,7 +45,7 @@
 
 - (void) setupUI {
     
-    self.studentNameLabel.text = @"Swapnil Harkanth";
+    self.studentNameLabel.text = [[SharedClass sharedInstance] username];
     self.profileImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
     profileImage = self.profileImageView.image;
     
