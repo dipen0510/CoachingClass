@@ -14,6 +14,7 @@
     
     NSMutableArray* studentArr;
     UIDatePicker *datePicker;
+    BOOL isAddMoreTapped;
     
 }
 
@@ -22,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;
 @property (weak, nonatomic) IBOutlet UITextField *pinCodeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *addMoreButton;
+
+@property BOOL isOpenedFromSideMenu;
 
 - (IBAction)submitButtonTapped:(id)sender;
 - (IBAction)addMoreStudentButtonTapped:(id)sender;

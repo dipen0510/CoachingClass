@@ -10,7 +10,7 @@
 
 @implementation SharedClass
 
-@synthesize username;
+@synthesize selectedStudentId,selectedStudentName;
 
 
 static SharedClass *singletonObject = nil;
@@ -64,37 +64,37 @@ static SharedClass *singletonObject = nil;
 
 #pragma mark - Local Storage Handling
 
-- (void)saveData: (NSString*)data ForService:(NSString *)service
+- (void)saveData: (NSString*)data ForService:(NSString *)service andStudentId:(NSString *)studentId
 {
     if (data != nil)
     {
         
-        [self removeServiceData:service];
+        [self removeServiceData:service forStudentId:studentId];
         
         NSString *documentsDirectory = [self getDocumentDirectoryPath];
         NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                          [NSString stringWithFormat:@"%@.txt",service] ];
+                          [NSString stringWithFormat:@"%@_%@.txt",service,studentId] ];
         
         [data writeToFile:path atomically:YES
                        encoding:NSUTF8StringEncoding error:nil];
     }
 }
 
-- (NSString*)loadDataForService:(NSString *)service
+- (NSString*)loadDataForService:(NSString *)service andStudentId:(NSString *)studentId
 {
     NSString *documentsDirectory = [self getDocumentDirectoryPath];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                     [NSString stringWithFormat:@"%@.txt",service] ];
+                     [NSString stringWithFormat:@"%@_%@.txt",service,studentId] ];
     NSString* content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
     return content;
 }
 
-- (void)removeServiceData:(NSString *)service
+- (void)removeServiceData:(NSString *)service forStudentId:(NSString *)studentId
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSString *documentsDirectory = [self getDocumentDirectoryPath];
     NSString* path = [documentsDirectory stringByAppendingPathComponent:
-                      [NSString stringWithFormat:@"%@.txt",service] ];
+                      [NSString stringWithFormat:@"%@_%@.txt",service,studentId] ];
     
     NSError *error;
     BOOL success = [fileManager removeItemAtPath:path error:&error];

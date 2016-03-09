@@ -21,6 +21,9 @@
 #define GetStudentsInfoDetailsKey @"GetStudentsInfoDetails"
 #define StudentIDKey @"StudentID"
 #define StudentsIdKey @"StudentsId"
+#define DeviceIDKey @"DeviceID"
+#define DeviceTypeKey @"DeviceType"
+#define GCMIDKey @"GCMID"
 
 //Attendance
 #define AttendedDaysFromLastMonthKey @"AttendedDaysFromLastMonth"
@@ -71,6 +74,8 @@
 
 
 #define statusKey @"Status"
+#define studentIdArrKey @"studentIdArr"
+#define kDeviceToken @"kDeviceToken"
 
 #endif
 

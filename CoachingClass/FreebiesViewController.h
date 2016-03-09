@@ -11,5 +11,7 @@
 @interface FreebiesViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
-
+@property (weak, nonatomic) IBOutlet UIView *studentHeaderView;
+@property (weak, nonatomic) IBOutlet UIImageView *studentHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *studentHeaderLabel;
 @end

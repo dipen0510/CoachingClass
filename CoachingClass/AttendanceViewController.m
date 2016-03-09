@@ -26,7 +26,13 @@
     
     [self customSetup];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAttendanceService];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAttendanceService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
         attendanceObj = [[GetAttendanceResponseObject alloc] initWithDictionary:dict];
@@ -43,7 +49,7 @@
         self.FromStartTotalDaysLabel.text = [NSString stringWithFormat:@"%d",0];
     }
     
-    
+    [self setupHeaderView];
     
 }
 
@@ -55,6 +61,23 @@
     
 }
 
+- (void) setupHeaderView {
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
+    
+    NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+    SubmitStudentDetailsResponseObject* studentObj = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:dict];
+    
+    self.studentHeaderImageView.layer.masksToBounds = YES;
+    self.studentHeaderImageView.layer.cornerRadius = self.studentHeaderImageView.frame.size.height/2.;
+    
+    self.studentHeaderImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
+    self.studentHeaderLabel.text = [[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentNameKey];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(studentHeaderViewTapped)];
+    [self.studentHeaderView addGestureRecognizer:gesture];
+    
+}
 
 - (void)customSetup
 {
@@ -79,6 +102,12 @@
     
     self.FromStartDaysAttendedLabel.text = [NSString stringWithFormat:@"%d",[attendanceObj.attendedDaysFromStart intValue]];
     self.FromStartTotalDaysLabel.text = [NSString stringWithFormat:@"%d",[attendanceObj.totalDaysFromStart intValue]];
+    
+}
+
+- (void) studentHeaderViewTapped {
+    
+    [self performSegueWithIdentifier:@"showSelectStudentSegue" sender:nil];
     
 }
 
@@ -138,7 +167,7 @@
     
     GetAttendanceRequestObject* obj = [[GetAttendanceRequestObject alloc] init];
     
-    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
+    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
     
     obj.studentId = [[[dict valueForKey:GetStudentsInfoDetailsKey] objectAtIndex:0] valueForKey:StudentsIdKey];

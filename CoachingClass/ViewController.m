@@ -7,12 +7,15 @@
 //
 
 #import "ViewController.h"
+#import "HomeViewController.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+@synthesize isOpenedFromSideMenu;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -102,6 +105,11 @@
     // and finally set the datePicker as the input mode of your textfield
     [self.dateOfBirthTextField setInputView:datePicker];
     
+    if (isOpenedFromSideMenu) {
+        [self.addMoreButton setTitle:@"CANCEL" forState:UIControlStateNormal];
+    }
+    
+    
 }
 
 
@@ -116,6 +124,8 @@
     manager.delegate = self;
     [manager startPOSTWebServicesWithParams:[self prepareDictionaryForSubmitStudentService]];
     
+    studentArr = [[NSMutableArray alloc] init];
+    
 }
 
 
@@ -126,11 +136,27 @@
     
     if ([requestServiceKey isEqualToString:kSubmitStudentService]) {
         
-        [[SharedClass sharedInstance] setUsername:self.studentNameTextField.text];
+        [[SharedClass sharedInstance] setSelectedStudentName:self.studentNameTextField.text];
+        [[SharedClass sharedInstance] setSelectedStudentId:[[responseData.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
         
         [SVProgressHUD dismiss];
-        [SVProgressHUD showSuccessWithStatus:@"Student Info Validated Successfully"];
-        [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+        
+        if (isAddMoreTapped) {
+            isAddMoreTapped = NO;
+            [SVProgressHUD showSuccessWithStatus:@"Student Added Successfully"];
+            
+        }
+        else {
+            [SVProgressHUD showSuccessWithStatus:@"Student Info Validated Successfully"];
+            
+            if (isOpenedFromSideMenu) {
+                [self backButtonTapped];
+            }
+            else {
+                [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
+            }
+        }
+        
         
         
     }
@@ -178,6 +204,15 @@
     UIDatePicker *picker = (UIDatePicker*)self.dateOfBirthTextField.inputView;
     [dict setObject:[self formatDateForUploading:picker.date] forKey:DOBKey];
     
+    NSString* deviceToken = [[NSUserDefaults standardUserDefaults] valueForKey:kDeviceToken];
+    if (!deviceToken) {
+        deviceToken = @"111";
+    }
+    
+    [dict setObject:deviceToken forKey:DeviceIDKey];
+    [dict setObject:deviceToken forKey:GCMIDKey];
+    [dict setObject:@"iPhone" forKey:DeviceTypeKey];
+    
     return dict;
     
 }
@@ -224,34 +259,48 @@
 
 - (IBAction)submitButtonTapped:(id)sender {
     
-    if ([self isFormValid]) {
-        
-        [studentArr addObject:[self prepareStudentObjectFromCurrent]];
-        [self startSubmitStudentService];
-        
-    }
-    else {
-        
-        [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
-        
-    }
+    isAddMoreTapped = NO;
+    
+        if ([self isFormValid]) {
+            
+            [studentArr addObject:[self prepareStudentObjectFromCurrent]];
+            [self startSubmitStudentService];
+            
+        }
+        else {
+            
+            [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
+            
+        }
+    
     
 }
 
 - (IBAction)addMoreStudentButtonTapped:(id)sender {
     
-    if ([self isFormValid]) {
+    if (isOpenedFromSideMenu) {
         
-        [studentArr addObject:[self prepareStudentObjectFromCurrent]];
-        [self clearFormData];
+        [self backButtonTapped];
         
     }
     else {
         
-        [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
+        isAddMoreTapped = YES;
+        
+        if ([self isFormValid]) {
+            
+            [studentArr addObject:[self prepareStudentObjectFromCurrent]];
+            [self clearFormData];
+            [self startSubmitStudentService];
+            
+        }
+        else {
+            
+            [self showMessage:@"Please check all input fields and try again." withTitle:@"Invalid Form"];
+            
+        }
         
     }
-    
     
 }
 
@@ -317,5 +366,18 @@
     [vc presentViewController:alert animated:YES completion:nil];
 }
 
+
+- (void)backButtonTapped {
+    
+    
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+    HomeViewController* controller = (HomeViewController*)[mainStoryboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    
+    [self.revealViewController setFrontViewController:controller animated:YES];
+    
+    //[self.navigationController pushViewController:controller animated:YES];
+    
+}
 
 @end

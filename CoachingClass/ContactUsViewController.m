@@ -25,7 +25,13 @@
     
     [self customSetup];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetContactusService];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetContactusService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
         contactObj = [[GetContactUsResponseObject alloc] initWithDictionary:dict];
@@ -39,6 +45,8 @@
         self.addressLabel.text = @"";
     }
     
+    [self setupHeaderView];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -46,6 +54,24 @@
     [super viewDidAppear:animated];
     
     [self startGetContactUsService];
+    
+}
+
+- (void) setupHeaderView {
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
+    
+    NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+    SubmitStudentDetailsResponseObject* studentObj = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:dict];
+    
+    self.studentHeaderImageView.layer.masksToBounds = YES;
+    self.studentHeaderImageView.layer.cornerRadius = self.studentHeaderImageView.frame.size.height/2.;
+    
+    self.studentHeaderImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
+    self.studentHeaderLabel.text = [[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentNameKey];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(studentHeaderViewTapped)];
+    [self.studentHeaderView addGestureRecognizer:gesture];
     
 }
 
@@ -69,6 +95,12 @@
     self.emailLabel.text = contactObj.email;
     self.phoneLabel.text = contactObj.phone;
     self.addressLabel.text = contactObj.address;
+    
+}
+
+- (void) studentHeaderViewTapped {
+    
+    [self performSegueWithIdentifier:@"showSelectStudentSegue" sender:nil];
     
 }
 

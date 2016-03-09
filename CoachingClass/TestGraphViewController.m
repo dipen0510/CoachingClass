@@ -108,6 +108,8 @@
     
     _chartView.data = data;
     
+    [_chartView zoom:(count/10.0) scaleY:1.0 x:0 y:0];
+    
     [_chartView animateWithYAxisDuration:1.4 easingOption:ChartEasingOptionEaseInOutQuart];
 }
 

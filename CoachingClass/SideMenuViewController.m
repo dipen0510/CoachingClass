@@ -9,6 +9,7 @@
 #import "SideMenuViewController.h"
 #import "SideMenuTableViewCell.h"
 #import "SubmitStudentDetailsResponseObject.h"
+#import "ViewController.h"
 
 @interface SideMenuViewController () {
     
@@ -33,7 +34,7 @@
     [self.profileImageView setUserInteractionEnabled:YES];
     [self.profileImageView addGestureRecognizer:tapGesture];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     
     NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
     studentObj = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:dict];
@@ -43,9 +44,10 @@
     
 }
 
+
 - (void) setupUI {
     
-    self.studentNameLabel.text = [[SharedClass sharedInstance] username];
+    self.studentNameLabel.text = [[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentNameKey];
     self.profileImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
     profileImage = self.profileImageView.image;
     
@@ -81,33 +83,38 @@
     tableArr = [[NSMutableArray alloc] init];
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     [dict setObject:@"Performance" forKey:@"title"];
-    [dict setObject:@"performance_tab.png" forKey:@"image"];
+    [dict setObject:@"performance.png" forKey:@"image"];
     [tableArr addObject:dict];
     
     NSMutableDictionary* dict1 = [[NSMutableDictionary alloc] init];
     [dict1 setObject:@"Attendance" forKey:@"title"];
-    [dict1 setObject:@"attendance_tab.png" forKey:@"image"];
+    [dict1 setObject:@"attendance.png" forKey:@"image"];
     [tableArr addObject:dict1];
     
     NSMutableDictionary* dict2 = [[NSMutableDictionary alloc] init];
     [dict2 setObject:@"Comments" forKey:@"title"];
-    [dict2 setObject:@"comments_tab.png" forKey:@"image"];
+    [dict2 setObject:@"comments.png" forKey:@"image"];
     [tableArr addObject:dict2];
     
     NSMutableDictionary* dict3 = [[NSMutableDictionary alloc] init];
     [dict3 setObject:@"Announcements" forKey:@"title"];
-    [dict3 setObject:@"comments_tab.png" forKey:@"image"];
+    [dict3 setObject:@"comments.png" forKey:@"image"];
     [tableArr addObject:dict3];
     
     NSMutableDictionary* dict4 = [[NSMutableDictionary alloc] init];
     [dict4 setObject:@"Contact Us" forKey:@"title"];
-    [dict4 setObject:@"contact_tab.png" forKey:@"image"];
+    [dict4 setObject:@"contact.png" forKey:@"image"];
     [tableArr addObject:dict4];
     
     NSMutableDictionary* dict5 = [[NSMutableDictionary alloc] init];
     [dict5 setObject:@"Freebies" forKey:@"title"];
-    [dict5 setObject:@"freebies_tab.png" forKey:@"image"];
+    [dict5 setObject:@"freebies.png" forKey:@"image"];
     [tableArr addObject:dict5];
+    
+    NSMutableDictionary* dict6 = [[NSMutableDictionary alloc] init];
+    [dict6 setObject:@"Add More Students" forKey:@"title"];
+    [dict6 setObject:@"freebies.png" forKey:@"image"];
+    [tableArr addObject:dict6];
     
 }
 
@@ -173,6 +180,9 @@
             [self performSegueWithIdentifier:@"showFreebiesSegue" sender:nil];
             break;
             
+        case 6:
+            [self performSegueWithIdentifier:@"showAddMoreSegue" sender:nil];
+            break;
             
         default:
             break;
@@ -333,14 +343,22 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"showAddMoreSegue"]) {
+        
+        ViewController* controleer = (ViewController *)[segue destinationViewController];
+        controleer.isOpenedFromSideMenu = YES;
+        
+    }
+    
 }
-*/
+
 
 @end

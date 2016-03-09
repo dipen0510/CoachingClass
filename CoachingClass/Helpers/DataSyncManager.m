@@ -112,16 +112,24 @@
     
     if ([responseServiceKey isEqualToString:kSubmitStudentService] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
-        
         SubmitStudentDetailsResponseObject* response = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:responseObj];
+        
+        NSString* studentId = [[response.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey];
+        
+        NSMutableArray *array = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:studentIdArrKey]];
+        
+        [array addObject:studentId];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:array forKey:studentIdArrKey];
+        
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:studentId];
         
         return response;
         
     }
     if ([responseServiceKey isEqualToString:kGetAttendanceService] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetAttendanceResponseObject* response = [[GetAttendanceResponseObject alloc] initWithDictionary:responseObj];
         
@@ -130,7 +138,7 @@
     }
     if ([responseServiceKey isEqualToString:kGetTeacherCommentsService] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetTeacherCommentResponseObject* response = [[GetTeacherCommentResponseObject alloc] initWithDictionary:responseObj];
         
@@ -139,7 +147,7 @@
     }
     if ([responseServiceKey isEqualToString:kGetContactusService] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetContactUsResponseObject* response = [[GetContactUsResponseObject alloc] initWithDictionary:responseObj];
         
@@ -148,7 +156,7 @@
     }
     if ([responseServiceKey isEqualToString:kGetAllSubjectWiseScore] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetAllSubjectWiseResponseObject* response = [[GetAllSubjectWiseResponseObject alloc] initWithDictionary:responseObj];
         
@@ -157,7 +165,7 @@
     }
     if ([responseServiceKey isEqualToString:kGetAllTestWiseScore] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetAllTestWiseResponseObject* response = [[GetAllTestWiseResponseObject alloc] initWithDictionary:responseObj];
         
@@ -166,7 +174,7 @@
     }
     if ([responseServiceKey isEqualToString:kGetBroadcastDetails] ) {
         
-        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey];
+        [[SharedClass sharedInstance] saveData:jsonString ForService:responseServiceKey andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
         
         GetBroadcastDetailsResponseObject* response = [[GetBroadcastDetailsResponseObject alloc] initWithDictionary:responseObj];
         

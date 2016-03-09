@@ -15,4 +15,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *commentsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *revealButtonItem;
+
+@property (weak, nonatomic) IBOutlet UIView *studentHeaderView;
+@property (weak, nonatomic) IBOutlet UIImageView *studentHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *studentHeaderLabel;
+
 @end

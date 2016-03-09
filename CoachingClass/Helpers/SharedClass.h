@@ -12,11 +12,12 @@
 
 + sharedInstance;
 
-@property (strong, nonatomic) NSString* username;
+@property (strong, nonatomic) NSString* selectedStudentName;
+@property (strong, nonatomic) NSString* selectedStudentId;
 
-- (void)saveData: (NSString*)data ForService:(NSString *)service;
-- (NSString*)loadDataForService:(NSString *)service;
-- (void)removeServiceData:(NSString *)service;
+- (void)saveData: (NSString*)data ForService:(NSString *)service andStudentId:(NSString *)studentId;
+- (NSString*)loadDataForService:(NSString *)service andStudentId:(NSString *)studentId;
+- (void)removeServiceData:(NSString *)service forStudentId:(NSString *)studentId;
 
 - (void) saveProfileImage:(UIImage *)image forStudentId:(NSString *)studentId;
 - (UIImage *) loadProfileImageForStudentId:(NSString *)studentId;

@@ -28,6 +28,8 @@
 		189104841C5AAC0F00E8D970 /* CommentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104821C5AAC0F00E8D970 /* CommentsTableViewCell.m */; };
 		189104851C5AAC0F00E8D970 /* CommentsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 189104831C5AAC0F00E8D970 /* CommentsTableViewCell.xib */; };
 		189104881C5AB4FA00E8D970 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189104871C5AB4FA00E8D970 /* ContactUsViewController.m */; };
+		189B7D801C8FFF06003A3257 /* arrow-down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 189B7D7F1C8FFF06003A3257 /* arrow-down@2x.png */; };
+		189B7D831C900A84003A3257 /* SelectStudentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 189B7D821C900A84003A3257 /* SelectStudentViewController.m */; };
 		18CF25411C3AF90F00F9F303 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25401C3AF90F00F9F303 /* main.m */; };
 		18CF25441C3AF90F00F9F303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25431C3AF90F00F9F303 /* AppDelegate.m */; };
 		18CF25471C3AF90F00F9F303 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF25461C3AF90F00F9F303 /* ViewController.m */; };
@@ -66,7 +68,6 @@
 		D44AD3D71C667385000E33BF /* GetContactUsResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D44AD3D61C667385000E33BF /* GetContactUsResponseObject.m */; };
 		D471791F1C7436BA0009578D /* AllTestGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D471791E1C7436BA0009578D /* AllTestGraphViewController.m */; };
 		D4D8AED31C50DCD300FF883A /* DataSyncManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */; };
-		D4D8AED41C50DCD300FF883A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECA1C50DCD300FF883A /* DBManager.m */; };
 		D4D8AED61C50DCD300FF883A /* SharedClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AECF1C50DCD300FF883A /* SharedClass.m */; };
 		D4D8AF081C50DCEB00FF883A /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AEDB1C50DCEB00FF883A /* AFHTTPRequestOperation.m */; };
 		D4D8AF091C50DCEB00FF883A /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D8AEDD1C50DCEB00FF883A /* AFHTTPRequestOperationManager.m */; };
@@ -210,6 +211,9 @@
 		189104831C5AAC0F00E8D970 /* CommentsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsTableViewCell.xib; sourceTree = "<group>"; };
 		189104861C5AB4FA00E8D970 /* ContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactUsViewController.h; sourceTree = "<group>"; };
 		189104871C5AB4FA00E8D970 /* ContactUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactUsViewController.m; sourceTree = "<group>"; };
+		189B7D7F1C8FFF06003A3257 /* arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down@2x.png"; sourceTree = "<group>"; };
+		189B7D811C900A84003A3257 /* SelectStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStudentViewController.h; sourceTree = "<group>"; };
+		189B7D821C900A84003A3257 /* SelectStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStudentViewController.m; sourceTree = "<group>"; };
 		18CF253C1C3AF90F00F9F303 /* CoachingClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachingClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF25401C3AF90F00F9F303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CF25421C3AF90F00F9F303 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -283,8 +287,6 @@
 		D4D8AEC61C50DCD300FF883A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		D4D8AEC71C50DCD300FF883A /* DataSyncManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSyncManager.h; sourceTree = "<group>"; };
 		D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSyncManager.m; sourceTree = "<group>"; };
-		D4D8AEC91C50DCD300FF883A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		D4D8AECA1C50DCD300FF883A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		D4D8AECD1C50DCD300FF883A /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		D4D8AECE1C50DCD300FF883A /* SharedClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedClass.h; sourceTree = "<group>"; };
 		D4D8AECF1C50DCD300FF883A /* SharedClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedClass.m; sourceTree = "<group>"; };
@@ -528,6 +530,8 @@
 				D471791E1C7436BA0009578D /* AllTestGraphViewController.m */,
 				D4100EF81C75881E0091E927 /* AnnouncementsViewController.h */,
 				D4100EF91C75881E0091E927 /* AnnouncementsViewController.m */,
+				189B7D811C900A84003A3257 /* SelectStudentViewController.h */,
+				189B7D821C900A84003A3257 /* SelectStudentViewController.m */,
 			);
 			path = CoachingClass;
 			sourceTree = "<group>";
@@ -627,8 +631,6 @@
 				D4D8AEC61C50DCD300FF883A /* Constants.h */,
 				D4D8AEC71C50DCD300FF883A /* DataSyncManager.h */,
 				D4D8AEC81C50DCD300FF883A /* DataSyncManager.m */,
-				D4D8AEC91C50DCD300FF883A /* DBManager.h */,
-				D4D8AECA1C50DCD300FF883A /* DBManager.m */,
 				D4D8AECD1C50DCD300FF883A /* Settings.h */,
 				D4D8AECE1C50DCD300FF883A /* SharedClass.h */,
 				D4D8AECF1C50DCD300FF883A /* SharedClass.m */,
@@ -736,6 +738,7 @@
 		D4D8AF321C50E77500FF883A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				189B7D7F1C8FFF06003A3257 /* arrow-down@2x.png */,
 				186BAECE1C5CBC9500F3C00D /* GraphBG.png */,
 				189104791C5AA3B800E8D970 /* AttendanceTableSeparator.png */,
 				189104771C5AA2A200E8D970 /* AttendanceTableBG.png */,
@@ -901,6 +904,7 @@
 				18CF254F1C3AF90F00F9F303 /* LaunchScreen.storyboard in Resources */,
 				D4D8AF871C50E77500FF883A /* contact.png in Resources */,
 				D4D8AF751C50E77500FF883A /* attendance_tab.png in Resources */,
+				189B7D801C8FFF06003A3257 /* arrow-down@2x.png in Resources */,
 				189104781C5AA2A200E8D970 /* AttendanceTableBG.png in Resources */,
 				18CF254C1C3AF90F00F9F303 /* Assets.xcassets in Resources */,
 				D4D8AF9C1C50E77500FF883A /* Splash.png in Resources */,
@@ -951,6 +955,7 @@
 			files = (
 				D4100F0F1C75DB000091E927 /* UIImage+PECrop.m in Sources */,
 				D4D8AF101C50DCEB00FF883A /* AFURLSessionManager.m in Sources */,
+				189B7D831C900A84003A3257 /* SelectStudentViewController.m in Sources */,
 				D4D8AF191C50DCEB00FF883A /* SVIndefiniteAnimatedView.m in Sources */,
 				D4D8AF0D1C50DCEB00FF883A /* AFURLConnectionOperation.m in Sources */,
 				D4D8AF171C50DCEB00FF883A /* UIRefreshControl+AFNetworking.m in Sources */,
@@ -989,7 +994,6 @@
 				D4D8AF121C50DCEB00FF883A /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				D4D8AF111C50DCEB00FF883A /* AFNetworkActivityIndicatorManager.m in Sources */,
 				18CF25411C3AF90F00F9F303 /* main.m in Sources */,
-				D4D8AED41C50DCD300FF883A /* DBManager.m in Sources */,
 				D4D8AF0C1C50DCEB00FF883A /* AFSecurityPolicy.m in Sources */,
 				D40D93261C524113001C8ECC /* HomeViewController.m in Sources */,
 				D40D93411C52582F001C8ECC /* ScoresListTableViewCell.m in Sources */,
@@ -1183,7 +1187,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e9c70652-206a-405b-97b0-8df78d876a97";
+				PROVISIONING_PROFILE = "c6f2aaa2-33f5-4146-ae8f-0428b0153f40";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1207,7 +1211,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e9c70652-206a-405b-97b0-8df78d876a97";
+				PROVISIONING_PROFILE = "c6f2aaa2-33f5-4146-ae8f-0428b0153f40";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
 			};
 			name = Release;

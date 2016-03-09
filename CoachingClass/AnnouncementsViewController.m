@@ -25,7 +25,13 @@
     
     [self customSetup];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetBroadcastDetails];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetBroadcastDetails andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
         broadcastObj = [[GetBroadcastDetailsResponseObject alloc] initWithDictionary:dict];
@@ -37,6 +43,8 @@
         self.teacherLabel.text = @"";
     }
     
+    [self setupHeaderView];
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -46,6 +54,25 @@
     [self startGetBroadcastDetailsService];
     
 }
+
+- (void) setupHeaderView {
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
+    
+    NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+    SubmitStudentDetailsResponseObject* studentObj = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:dict];
+    
+    self.studentHeaderImageView.layer.masksToBounds = YES;
+    self.studentHeaderImageView.layer.cornerRadius = self.studentHeaderImageView.frame.size.height/2.;
+    
+    self.studentHeaderImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
+    self.studentHeaderLabel.text = [[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentNameKey];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(studentHeaderViewTapped)];
+    [self.studentHeaderView addGestureRecognizer:gesture];
+    
+}
+
 
 - (void)customSetup
 {
@@ -66,6 +93,12 @@
     self.headingLabel.text = broadcastObj.heading;
     self.summaryTxtView.text = broadcastObj.summary;
     self.teacherLabel.text = broadcastObj.teacherName;
+    
+}
+
+- (void) studentHeaderViewTapped {
+    
+    [self performSegueWithIdentifier:@"showSelectStudentSegue" sender:nil];
     
 }
 

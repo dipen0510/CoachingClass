@@ -25,8 +25,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self customSetup];
     
-    NSString* commentStr = [[SharedClass sharedInstance] loadDataForService:kGetTeacherCommentsService];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    NSString* commentStr = [[SharedClass sharedInstance] loadDataForService:kGetTeacherCommentsService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     if (commentStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:commentStr];
         commentsObj = [[GetTeacherCommentResponseObject alloc] initWithDictionary:dict];
@@ -34,8 +41,8 @@
     else {
         commentsObj = [[GetTeacherCommentResponseObject alloc] init];
     }
-    
-    [self customSetup];
+    [self.commentsTableView reloadData];
+    [self setupHeaderView];
     
 }
 
@@ -45,6 +52,25 @@
     [super viewDidAppear:animated];
     
     [self startGetCommentsService];
+    
+}
+
+
+- (void) setupHeaderView {
+    
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
+    
+    NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
+    SubmitStudentDetailsResponseObject* studentObj = [[SubmitStudentDetailsResponseObject alloc] initWithDictionary:dict];
+    
+    self.studentHeaderImageView.layer.masksToBounds = YES;
+    self.studentHeaderImageView.layer.cornerRadius = self.studentHeaderImageView.frame.size.height/2.;
+    
+    self.studentHeaderImageView.image = [[SharedClass sharedInstance] loadProfileImageForStudentId:[[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentsIdKey]];
+    self.studentHeaderLabel.text = [[studentObj.getStudentsInfoDetails objectAtIndex:0] valueForKey:StudentNameKey];
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(studentHeaderViewTapped)];
+    [self.studentHeaderView addGestureRecognizer:gesture];
     
 }
 
@@ -62,6 +88,11 @@
     }
 }
 
+- (void) studentHeaderViewTapped {
+    
+    [self performSegueWithIdentifier:@"showSelectStudentSegue" sender:nil];
+    
+}
 
 
 #pragma mark - API Handling
@@ -118,7 +149,7 @@
     
     GetTeacherCommentsRequestObject* obj = [[GetTeacherCommentsRequestObject alloc] init];
     
-    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
+    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
     
     obj.studentId = [[[dict valueForKey:GetStudentsInfoDetailsKey] objectAtIndex:0] valueForKey:StudentsIdKey];
@@ -131,6 +162,10 @@
 #pragma mark - UITableView Datasource -
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    if ([commentsObj.getTeachersCommentsDetails isEqual:[NSNull null]]) {
+        return 0;
+    }
     
     return commentsObj.getTeachersCommentsDetails.count;
     

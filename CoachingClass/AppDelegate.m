@@ -17,7 +17,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [self enablePushNotification];
+    
     return YES;
+}
+
+// Add or incorporate this function in your app delegate file
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken
+{
+    //NSLog(@"Succeeded registering for push notifications. Device token: %@", devToken);
+    
+    NSString *tokenStr = [devToken description];
+    tokenStr = [tokenStr stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    tokenStr = [tokenStr stringByReplacingOccurrencesOfString:@">" withString:@""];
+    tokenStr = [tokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    [[NSUserDefaults standardUserDefaults] setValue:tokenStr forKey:kDeviceToken];
+    
+}
+
+//Add or incorporate function to display for simulator support
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *) error
+{
+    //NSLog(@"Failed to register with error: %@", error);
+    
+}
+
+// Add or incorporate this function in your app delegate file
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)launchOptions
+{
+    //NSLog(@"Receiving notification, app is running");
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -40,6 +71,30 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - PUSH NOTIFICATION
+
+- (void)enablePushNotification {
+    UIApplication * app = [UIApplication sharedApplication];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+    
+    if([app respondsToSelector:@selector(registerForRemoteNotifications)])
+    {
+        UIUserNotificationType types = UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
+        UIUserNotificationSettings * settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [app registerUserNotificationSettings: settings];
+        [app registerForRemoteNotifications];
+    }
+    else
+    {
+#endif
+        UIRemoteNotificationType types = UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound |UIRemoteNotificationTypeAlert;
+        [app registerForRemoteNotificationTypes:types];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_7_1
+    }
+#endif
+    
 }
 
 @end

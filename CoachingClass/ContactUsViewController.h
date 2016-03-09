@@ -18,4 +18,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *websiteLabel;
 @property (weak, nonatomic) IBOutlet UILabel *addressLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *studentHeaderView;
+@property (weak, nonatomic) IBOutlet UIImageView *studentHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *studentHeaderLabel;
+
 @end

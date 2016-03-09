@@ -18,5 +18,6 @@
 #import "Settings.h"
 #import "DataSyncManager.h"
 #import "SharedClass.h"
+#import "SubmitStudentDetailsResponseObject.h"
 
 #endif /* PrefixHeader_pch */

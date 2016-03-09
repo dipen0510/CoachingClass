@@ -28,7 +28,7 @@
     
     self.listTblView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllSubjectWiseScore];
+    NSString* attendStr = [[SharedClass sharedInstance] loadDataForService:kGetAllSubjectWiseScore andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     if (attendStr) {
         NSMutableDictionary* dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:attendStr];
         allSubjectObj = [[GetAllSubjectWiseResponseObject alloc] initWithDictionary:dict];
@@ -101,7 +101,7 @@
     
     GetAllSubjectWiseScoreRequestObject* obj = [[GetAllSubjectWiseScoreRequestObject alloc] init];
     
-    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService];
+    NSString* content = [[SharedClass sharedInstance] loadDataForService:kSubmitStudentService andStudentId:[[SharedClass sharedInstance] selectedStudentId]];
     NSMutableDictionary *dict = [[SharedClass sharedInstance] getDictionaryFromJSONString:content];
     
     obj.studentId = [[[dict valueForKey:GetStudentsInfoDetailsKey] objectAtIndex:0] valueForKey:StudentsIdKey];

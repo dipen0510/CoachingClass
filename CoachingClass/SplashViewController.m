@@ -18,8 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSMutableArray *array = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:studentIdArrKey]];
     
-    if ([[SharedClass sharedInstance] loadDataForService:kSubmitStudentService]) {
+    if (array.count > 0) {
+        [[SharedClass sharedInstance] setSelectedStudentId:[array objectAtIndex:0]];
         [self performSegueWithIdentifier:@"showHomeSegue" sender:nil];
     }
     else {

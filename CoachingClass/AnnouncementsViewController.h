@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *summaryTxtView;
 @property (weak, nonatomic) IBOutlet UILabel *teacherLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *studentHeaderView;
+@property (weak, nonatomic) IBOutlet UIImageView *studentHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *studentHeaderLabel;
+
 @end
