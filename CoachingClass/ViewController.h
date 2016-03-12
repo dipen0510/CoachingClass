@@ -18,6 +18,7 @@
     
 }
 
+@property (weak, nonatomic) IBOutlet UIScrollView *contentScrollView;
 @property (weak, nonatomic) IBOutlet UITextField *studentNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *rollNumberTextField;
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthTextField;

@@ -105,6 +105,11 @@
     // and finally set the datePicker as the input mode of your textfield
     [self.dateOfBirthTextField setInputView:datePicker];
     
+    
+    UITapGestureRecognizer* gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.contentScrollView addGestureRecognizer:gesture];
+    
+    
     if (isOpenedFromSideMenu) {
         [self.addMoreButton setTitle:@"CANCEL" forState:UIControlStateNormal];
     }
@@ -306,6 +311,12 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    [self.view endEditing:YES];
+    
+}
+
+- (void)hideKeyboard {
     
     [self.view endEditing:YES];
     

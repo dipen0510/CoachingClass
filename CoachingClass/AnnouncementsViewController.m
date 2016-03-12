@@ -43,7 +43,7 @@
         self.teacherLabel.text = @"";
     }
     
-    [self setupHeaderView];
+    //[self setupHeaderView];
     
 }
 

@@ -45,7 +45,7 @@
         self.addressLabel.text = @"";
     }
     
-    [self setupHeaderView];
+    //[self setupHeaderView];
     
 }
 
