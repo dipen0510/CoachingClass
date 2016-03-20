@@ -114,6 +114,8 @@
         [self.addMoreButton setTitle:@"CANCEL" forState:UIControlStateNormal];
     }
     
+    self.pinCodeTextField.keyboardType = UIKeyboardTypeNumberPad;
+    self.rollNumberTextField.keyboardType = UIKeyboardTypeNumberPad;
     
 }
 
