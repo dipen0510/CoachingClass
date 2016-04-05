@@ -37,7 +37,7 @@
     
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height);
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:69./255. green:194./255. blue:172./255. alpha:1.0] CGColor], (id)[[UIColor colorWithRed:211./255. green:248./255. blue:205./255. alpha:1.0] CGColor], nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:234./255. green:8./255. blue:204./255. alpha:1.0] CGColor], (id)[[UIColor colorWithRed:244./255. green:128./255. blue:239./255. alpha:1.0] CGColor], nil];
     [self.view.layer insertSublayer:gradient atIndex:0];
     
 }
@@ -67,7 +67,7 @@
     [self.dateOfBirthTextField.layer addSublayer:bottomBorder2];
     [self.pinCodeTextField.layer addSublayer:bottomBorder3];
     
-    self.submitButton.layer.borderColor = [self.studentNameTextField.textColor CGColor];
+    self.submitButton.layer.borderColor = [[UIColor colorWithRed:234./255. green:8./255. blue:204./255. alpha:1.0] CGColor];
     self.submitButton.layer.borderWidth = 1.0;
     self.submitButton.layer.cornerRadius = self.submitButton.frame.size.height/2.;
     

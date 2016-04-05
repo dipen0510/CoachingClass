@@ -10,7 +10,7 @@
 #define CoachingClass_Settings_h
 
 
-#define BaseWebServiceURL @"http://admin.mvsquares.com/CoachingClasses"
+#define BaseWebServiceURL @"http://vardhishnu.mvsquares.com/CoachingClasses"
 
 #define kSubmitStudentService @"SubmitStudentDetails"
 #define kGetTeacherCommentsService @"GetTeachersCommentsDetails"
