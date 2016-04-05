@@ -929,6 +929,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -941,8 +942,9 @@
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = Charts;
+				PROVISIONING_PROFILE = "917dfaaf-0acc-4131-b96b-68accd2b08db";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -953,6 +955,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Swapnil Harkanth (CZA6DXR72T)";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -965,8 +968,9 @@
 				INFOPLIST_FILE = "Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
 				PRODUCT_NAME = Charts;
+				PROVISIONING_PROFILE = "917dfaaf-0acc-4131-b96b-68accd2b08db";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

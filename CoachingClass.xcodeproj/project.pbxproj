@@ -215,7 +215,7 @@
 		189B7D7F1C8FFF06003A3257 /* arrow-down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-down@2x.png"; sourceTree = "<group>"; };
 		189B7D811C900A84003A3257 /* SelectStudentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectStudentViewController.h; sourceTree = "<group>"; };
 		189B7D821C900A84003A3257 /* SelectStudentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectStudentViewController.m; sourceTree = "<group>"; };
-		18CF253C1C3AF90F00F9F303 /* CoachingClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoachingClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CF253C1C3AF90F00F9F303 /* Vardhishnu Science Academy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vardhishnu Science Academy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18CF25401C3AF90F00F9F303 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18CF25421C3AF90F00F9F303 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18CF25431C3AF90F00F9F303 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -481,7 +481,7 @@
 		18CF253D1C3AF90F00F9F303 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18CF253C1C3AF90F00F9F303 /* CoachingClass.app */,
+				18CF253C1C3AF90F00F9F303 /* Vardhishnu Science Academy.app */,
 				18CF25551C3AF91000F9F303 /* CoachingClassTests.xctest */,
 				18CF25601C3AF91000F9F303 /* CoachingClassUITests.xctest */,
 			);
@@ -790,7 +790,7 @@
 			);
 			name = CoachingClass;
 			productName = CoachingClass;
-			productReference = 18CF253C1C3AF90F00F9F303 /* CoachingClass.app */;
+			productReference = 18CF253C1C3AF90F00F9F303 /* Vardhishnu Science Academy.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18CF25541C3AF91000F9F303 /* CoachingClassTests */ = {
@@ -1189,10 +1189,11 @@
 				INFOPLIST_FILE = CoachingClass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
-				PRODUCT_NAME = CoachingClass;
-				PROVISIONING_PROFILE = "c6f2aaa2-33f5-4146-ae8f-0428b0153f40";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.vardhishnu;
+				PRODUCT_NAME = "Vardhishnu Science Academy";
+				PROVISIONING_PROFILE = "f6d15cae-5fef-4aab-94ac-b81e47e57574";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CoachingClass-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1213,10 +1214,11 @@
 				INFOPLIST_FILE = CoachingClass/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.CoachingClass;
-				PRODUCT_NAME = CoachingClass;
-				PROVISIONING_PROFILE = "c6f2aaa2-33f5-4146-ae8f-0428b0153f40";
+				PRODUCT_BUNDLE_IDENTIFIER = com.stardeep.vardhishnu;
+				PRODUCT_NAME = "Vardhishnu Science Academy";
+				PROVISIONING_PROFILE = "f6d15cae-5fef-4aab-94ac-b81e47e57574";
 				SWIFT_OBJC_BRIDGING_HEADER = "CoachingClass-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "CoachingClass-Swift.h";
 			};
 			name = Release;
 		};
